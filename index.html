@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#101714" />
   <title>Topografía Profesional | Panamá</title>
-  <meta name="description" content="Servicios profesionales de topografía en Panamá: levantamientos, replanteos, georreferenciación, linderos, mensuras y planos." />
+  <meta name="description" content="Servicios profesionales de topografía en Panamá con experiencia de navegación fluida, visualización técnica y contacto directo por WhatsApp." />
   <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="stylesheet" href="styles.css?v=4" />
+  <link rel="stylesheet" href="styles.css?v=5" />
   <style>
     .whatsapp-float{position:fixed;right:18px;bottom:22px;z-index:9999;display:flex;align-items:center;gap:11px;min-height:58px;padding:8px 15px 8px 8px;border-radius:18px;background:#101714;color:#fff!important;border:1px solid rgba(255,255,255,.16);box-shadow:0 18px 48px rgba(16,23,20,.34);text-decoration:none;isolation:isolate}
     .whatsapp-float:hover,.whatsapp-float:focus-visible{transform:translateY(-2px);box-shadow:0 22px 58px rgba(16,23,20,.4);outline:2px solid rgba(37,211,102,.38);outline-offset:3px}
@@ -28,6 +28,7 @@
     <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menú</button>
     <nav id="nav" class="nav">
       <a href="#servicios">Servicios</a>
+      <a href="#inteligencia">Visualización</a>
       <a href="#proceso">Proceso</a>
       <a href="#proyectos">Proyectos</a>
       <a href="#credenciales">Credenciales</a>
@@ -36,48 +37,164 @@
   </header>
 
   <main>
-    <section id="inicio" class="hero section">
+    <section id="inicio" class="hero section hero-depth">
       <div class="survey-grid" aria-hidden="true"></div>
       <div class="hero-copy reveal">
         <p class="eyebrow">Precisión · Territorio · Confianza</p>
-        <h1>Topografía profesional con criterio técnico y precisión en campo.</h1>
-        <p class="lead">Levantamientos, linderos, replanteos, georreferenciación y planos para proyectos residenciales, comerciales y de infraestructura en Panamá.</p>
+        <h1>Topografía profesional con profundidad visual, criterio técnico y precisión en campo.</h1>
+        <p class="lead">Una experiencia web más fluida y moderna para representar levantamientos, linderos, replanteos, georreferenciación y documentación técnica con una estética profesional inspirada en capas, relieve y lectura del territorio.</p>
         <div class="hero-actions">
           <a class="btn primary" href="#cotizar">Solicitar cotización</a>
           <a class="btn ghost" href="#proyectos">Ver proyectos</a>
         </div>
         <div class="status-row">
           <span><b>Idoneidad</b><small>Verificable</small></span>
-          <span><b>Atención</b><small>Personalizada</small></span>
+          <span><b>Experiencia</b><small>Trabajo de campo</small></span>
           <span><b>Cobertura</b><small>Panamá</small></span>
         </div>
       </div>
-      <div class="hero-visual reveal" aria-label="Visualización topográfica decorativa">
-        <div class="map-card">
-          <div class="coord c1">N 998456.22</div>
-          <div class="coord c2">E 661024.89</div>
-          <svg viewBox="0 0 500 500" role="img" aria-label="Parcela topográfica estilizada">
-            <path class="contour" d="M15 290 C100 190, 180 360, 280 240 S430 170, 490 265"/>
-            <path class="contour dim" d="M5 340 C95 250, 185 390, 300 300 S425 220, 500 310"/>
-            <polygon class="parcel" points="120,110 385,145 350,385 90,350" />
-            <line class="measure" x1="120" y1="110" x2="385" y2="145"/>
-            <line class="measure" x1="385" y1="145" x2="350" y2="385"/>
-            <circle class="point" cx="120" cy="110" r="7"/><circle class="point" cx="385" cy="145" r="7"/><circle class="point" cx="350" cy="385" r="7"/><circle class="point" cx="90" cy="350" r="7"/>
-          </svg>
-          <div class="map-meta"><span>LEV-001</span><span>± 0.02 m</span></div>
+
+      <div class="hero-visual reveal depth-stage" aria-label="Visualización técnica en capas">
+        <div class="depth-shell parallax-shell">
+          <div class="depth-back layer" data-depth="0.08"></div>
+          <div class="depth-grid layer" data-depth="0.12"></div>
+          <div class="depth-contours layer" data-depth="0.18">
+            <svg viewBox="0 0 620 620" role="img" aria-label="Relieve y curvas de nivel">
+              <path d="M48 440c94-128 184-157 280-138 96 19 157-56 246-87" />
+              <path d="M30 490c101-136 197-173 307-153 91 17 153-47 245-94" />
+              <path d="M72 394c77-104 148-125 236-114 86 11 148-45 220-70" />
+              <path d="M108 342c67-79 126-95 202-89 82 6 130-38 192-58" />
+              <path d="M145 296c55-61 105-72 170-67 64 5 109-27 158-45" />
+            </svg>
+          </div>
+          <div class="depth-surface layer" data-depth="0.24">
+            <svg viewBox="0 0 620 620" role="img" aria-label="Parcela y puntos de control">
+              <polygon points="156,148 440,176 392,462 124,431" />
+              <line x1="156" y1="148" x2="440" y2="176" />
+              <line x1="440" y1="176" x2="392" y2="462" />
+              <line x1="392" y1="462" x2="124" y2="431" />
+              <line x1="124" y1="431" x2="156" y2="148" />
+              <circle cx="156" cy="148" r="7" />
+              <circle cx="440" cy="176" r="7" />
+              <circle cx="392" cy="462" r="7" />
+              <circle cx="124" cy="431" r="7" />
+            </svg>
+          </div>
+          <div class="network-overlay layer" data-depth="0.3">
+            <div class="network-line l1"></div>
+            <div class="network-line l2"></div>
+            <div class="network-node n1"></div>
+            <div class="network-node n2"></div>
+            <div class="network-node n3"></div>
+            <div class="network-node n4"></div>
+          </div>
+          <div class="depth-card metric-a layer" data-depth="0.28">
+            <small>CONTROL</small>
+            <strong>± 0.02 m</strong>
+            <span>Precisión de referencia</span>
+          </div>
+          <div class="depth-card metric-b layer" data-depth="0.34">
+            <small>MAPA DE RELIEVE</small>
+            <strong>Capas técnicas</strong>
+            <span>Datos, curvas y red</span>
+          </div>
+          <div class="depth-card metric-c layer" data-depth="0.22">
+            <small>LECTURA TERRITORIAL</small>
+            <strong>N / E / Cota</strong>
+            <span>Visualización jerárquica</span>
+          </div>
         </div>
+      </div>
+
+      <div class="hero-dock reveal" aria-label="Accesos rápidos principales">
+        <a class="dock-pill active" href="#servicios">Servicios</a>
+        <a class="dock-pill" href="#inteligencia">Visualización</a>
+        <a class="dock-pill" href="#proceso">Proceso</a>
+        <a class="dock-pill" href="#proyectos">Portafolio</a>
+        <a class="dock-pill" href="#credenciales">Idoneidad</a>
+        <a class="dock-pill" href="#cotizar">Contacto</a>
       </div>
     </section>
 
     <section id="servicios" class="section shell">
-      <div class="section-head reveal"><p class="eyebrow">Servicios</p><h2>Soluciones topográficas para cada etapa del proyecto.</h2></div>
+      <div class="section-head reveal">
+        <p class="eyebrow">Servicios</p>
+        <h2>Soluciones topográficas para cada etapa del proyecto.</h2>
+        <p>No solo se muestran servicios: se presentan con una estructura limpia, lectura rápida y sensación de plataforma técnica moderna.</p>
+      </div>
       <div class="cards">
         <article class="card reveal"><span>01</span><h3>Levantamientos topográficos</h3><p>Captura precisa de terreno, estructuras y elementos existentes para diseño, planificación y documentación.</p></article>
         <article class="card reveal"><span>02</span><h3>Linderos y mensuras</h3><p>Ubicación y comprobación de límites, medidas y referencias físicas del terreno.</p></article>
-        <article class="card reveal"><span>03</span><h3>Replanteos</h3><p>Traslado de ejes, puntos y cotas de proyecto al terreno para ejecución de obra.</p></article>
+        <article class="card reveal"><span>03</span><h3>Replanteos</h3><p>Traslado de ejes, puntos y cotas del proyecto al terreno para ejecución de obra.</p></article>
         <article class="card reveal"><span>04</span><h3>Georreferenciación</h3><p>Posicionamiento y control de coordenadas para documentación técnica y análisis territorial.</p></article>
         <article class="card reveal"><span>05</span><h3>Planos y documentación</h3><p>Preparación ordenada de información de campo y planos técnicos según el alcance contratado.</p></article>
-        <article class="card reveal"><span>06</span><h3>Asesoría técnica</h3><p>Orientación inicial para definir qué servicio requiere el cliente antes de ejecutar trabajo de campo.</p></article>
+        <article class="card reveal"><span>06</span><h3>Asesoría técnica</h3><p>Orientación inicial para definir qué servicio requiere el cliente antes del trabajo de campo.</p></article>
+      </div>
+    </section>
+
+    <section id="inteligencia" class="section deep-band">
+      <div class="shell visual-lab">
+        <div class="section-head reveal">
+          <p class="eyebrow">Visualización profesional</p>
+          <h2>Capas, relieve y lectura jerárquica en una interfaz más viva.</h2>
+          <p>Esta área convierte la información técnica en una experiencia visual más rica: mapas de relieve, redes jerárquicas y líneas temporales contorneadas con navegación horizontal frontal.</p>
+        </div>
+
+        <div class="visual-panel reveal">
+          <div class="visual-tabs" role="tablist" aria-label="Visualizaciones técnicas">
+            <button class="visual-tab active" type="button" data-panel="relieve" aria-selected="true">Mapa de relieve</button>
+            <button class="visual-tab" type="button" data-panel="red" aria-selected="false">Red jerárquica</button>
+            <button class="visual-tab" type="button" data-panel="tiempo" aria-selected="false">Capas temporales</button>
+          </div>
+
+          <div class="visual-panels">
+            <article class="visual-card active" id="panel-relieve">
+              <div class="visual-copy">
+                <small>RELIEVE DE DATOS</small>
+                <h3>Curvas de nivel, valles y montañas para representar proximidad, intensidad o detalle técnico.</h3>
+                <p>Ideal para que la web se sienta más inmersiva y menos plana. Sirve para transmitir trabajo de campo, lectura del terreno y profundidad profesional sin perder fluidez.</p>
+              </div>
+              <div class="visual-art relief-art" aria-hidden="true">
+                <span class="ridge r1"></span><span class="ridge r2"></span><span class="ridge r3"></span><span class="ridge r4"></span><span class="ridge r5"></span>
+                <div class="altitude-tag t1">Cota 124.8</div>
+                <div class="altitude-tag t2">Cota 137.2</div>
+                <div class="altitude-tag t3">Pendiente 6.2%</div>
+              </div>
+            </article>
+
+            <article class="visual-card" id="panel-red">
+              <div class="visual-copy">
+                <small>RED JERÁRQUICA</small>
+                <h3>Relaciones, jerarquías y niveles técnicos con nodos conectados sobre un campo contorneado.</h3>
+                <p>Puede funcionar para mostrar flujos de trabajo, estructura documental, parentescos de datos o ramas de proyectos, evitando las cajas aburridas tradicionales.</p>
+              </div>
+              <div class="visual-art network-art" aria-hidden="true">
+                <div class="tree-core">BASE</div>
+                <div class="tree-node a">Campo</div>
+                <div class="tree-node b">Procesamiento</div>
+                <div class="tree-node c">Entrega</div>
+                <div class="tree-node d">Planos</div>
+                <div class="tree-node e">Coordenadas</div>
+                <div class="tree-node f">Control</div>
+                <span class="branch b1"></span><span class="branch b2"></span><span class="branch b3"></span><span class="branch b4"></span><span class="branch b5"></span><span class="branch b6"></span>
+              </div>
+            </article>
+
+            <article class="visual-card" id="panel-tiempo">
+              <div class="visual-copy">
+                <small>CAPAS TEMPORALES</small>
+                <h3>Etapas del trabajo técnico representadas como bandas de relieve y profundidad.</h3>
+                <p>Una forma más elegante de representar progreso, eras, hitos o fases de un proyecto topográfico sin recurrir a timelines rígidos y pesados.</p>
+              </div>
+              <div class="visual-art timeline-art" aria-hidden="true">
+                <div class="era e1"><strong>Solicitud</strong><span>Recepción inicial</span></div>
+                <div class="era e2"><strong>Campo</strong><span>Levantamiento y control</span></div>
+                <div class="era e3"><strong>Procesado</strong><span>Curvas, coordenadas, planos</span></div>
+                <div class="era e4"><strong>Entrega</strong><span>Documentación técnica</span></div>
+              </div>
+            </article>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -94,7 +211,7 @@
     </section>
 
     <section id="proyectos" class="section shell">
-      <div class="section-head reveal"><p class="eyebrow">Portafolio</p><h2>Proyectos que podrán mostrarse con contexto técnico, no solo fotografías.</h2></div>
+      <div class="section-head reveal"><p class="eyebrow">Portafolio</p><h2>Proyectos con contexto técnico, lectura visual y mejor jerarquía.</h2></div>
       <div class="project-grid">
         <article class="project reveal"><div class="project-art a"></div><div><small>LEVANTAMIENTO</small><h3>Proyecto residencial</h3><p>Ficha preparada para ubicación general, alcance, método y resultado.</p></div></article>
         <article class="project reveal"><div class="project-art b"></div><div><small>REPLANTEO</small><h3>Obra civil</h3><p>Espacio para documentar ejes, control de cotas y puntos de referencia.</p></div></article>
@@ -104,13 +221,21 @@
 
     <section id="credenciales" class="section credential-section">
       <div class="shell credential-card reveal">
-        <div><p class="eyebrow">Confianza profesional</p><h2>Topógrafa idónea en Panamá.</h2><p>Esta sección quedará destinada a nombre completo, número de idoneidad/licencia, formación, experiencia y asociaciones profesionales que ella autorice publicar.</p></div>
+        <div>
+          <p class="eyebrow">Confianza profesional</p>
+          <h2>Topógrafa idónea en Panamá.</h2>
+          <p>Esta sección quedará destinada a nombre completo, número de idoneidad/licencia, formación, experiencia y asociaciones profesionales autorizadas para publicación.</p>
+        </div>
         <div class="credential-placeholder"><span>✓</span><strong>IDONEIDAD PROFESIONAL</strong><small>Datos pendientes de personalización</small></div>
       </div>
     </section>
 
     <section id="cotizar" class="section shell quote-grid">
-      <div class="section-head reveal"><p class="eyebrow">Cotización inteligente</p><h2>Cuéntanos qué necesitas.</h2><p>El formulario está preparado para conectarse a n8n mediante webhook seguro. Mientras la automatización no esté activa, funciona en modo demostración sin enviar datos.</p></div>
+      <div class="section-head reveal">
+        <p class="eyebrow">Cotización inteligente</p>
+        <h2>Cuéntanos qué necesitas.</h2>
+        <p>El formulario está preparado para conectarse a n8n mediante webhook seguro. Mientras la automatización no esté activa, funciona en modo demostración sin enviar datos.</p>
+      </div>
       <form id="quoteForm" class="quote-form reveal">
         <label>Nombre completo<input name="name" required autocomplete="name" /></label>
         <label>WhatsApp<input name="phone" required inputmode="tel" autocomplete="tel" /></label>
@@ -134,7 +259,7 @@
     <span class="whatsapp-copy"><strong>WhatsApp</strong><small>6975-9603</small></span>
   </a>
 
-  <script src="config.js?v=4"></script>
-  <script src="app.js?v=4" defer></script>
+  <script src="config.js?v=5"></script>
+  <script src="app.js?v=5" defer></script>
 </body>
 </html>
