@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cyberlabpty.github.io/topografia-profesional/sitemap.xml
