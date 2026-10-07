@@ -1,38 +1,101 @@
 const cfg = window.SITE_CONFIG || {};
 const nav = document.querySelector('.nav');
 const menu = document.querySelector('.menu-btn');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 menu?.addEventListener('click', () => {
   const open = nav.classList.toggle('open');
   menu.setAttribute('aria-expanded', String(open));
 });
+
 nav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
   nav.classList.remove('open');
   menu?.setAttribute('aria-expanded', 'false');
 }));
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('show'); });
-}, { threshold: .12 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+document.querySelectorAll('.dock-pill').forEach(pill => {
+  pill.addEventListener('click', () => {
+    document.querySelectorAll('.dock-pill').forEach(item => item.classList.remove('active'));
+    pill.classList.add('active');
+  });
+});
 
-function mountWhatsAppButton() {
-  if (document.querySelector('.whatsapp-float')) return;
-  const number = String(cfg.whatsappNumber || '').replace(/\D/g, '');
-  if (!number) return;
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('show');
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-  const message = 'Hola, vi su página web y quisiera información sobre un servicio de topografía.';
-  const link = document.createElement('a');
-  link.className = 'whatsapp-float';
-  link.href = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
-  link.target = '_blank';
-  link.rel = 'noopener noreferrer';
-  link.setAttribute('aria-label', 'Contactar por WhatsApp al 6975-9603');
-  link.innerHTML = `
-    <span class="whatsapp-icon" aria-hidden="true"><img src="https://cdn.simpleicons.org/whatsapp/ffffff" alt="" width="26" height="26"></span>
-    <span class="whatsapp-copy"><strong>WhatsApp</strong><small>6975-9603</small></span>`;
-  document.body.appendChild(link);
+const sectionMap = new Map();
+document.querySelectorAll('section[id]').forEach(section => {
+  sectionMap.set(section.id, document.querySelector(`.dock-pill[href="#${section.id}"]`));
+});
+
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const target = sectionMap.get(entry.target.id);
+    if (!target) return;
+    document.querySelectorAll('.dock-pill').forEach(item => item.classList.remove('active'));
+    target.classList.add('active');
+  });
+}, { threshold: 0.45 });
+sectionMap.forEach((_, id) => {
+  const section = document.getElementById(id);
+  if (section) sectionObserver.observe(section);
+});
+
+const tabs = document.querySelectorAll('.visual-tab');
+const panels = {
+  relieve: document.getElementById('panel-relieve'),
+  red: document.getElementById('panel-red'),
+  tiempo: document.getElementById('panel-tiempo')
+};
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    const key = tab.dataset.panel;
+    tabs.forEach(btn => {
+      btn.classList.remove('active');
+      btn.setAttribute('aria-selected', 'false');
+    });
+    Object.values(panels).forEach(panel => panel?.classList.remove('active'));
+    tab.classList.add('active');
+    tab.setAttribute('aria-selected', 'true');
+    panels[key]?.classList.add('active');
+  });
+});
+
+if (!prefersReducedMotion) {
+  const shell = document.querySelector('.parallax-shell');
+  const layers = shell ? shell.querySelectorAll('.layer[data-depth]') : [];
+  let ticking = false;
+
+  const updateParallax = () => {
+    if (!shell) return;
+    const rect = shell.getBoundingClientRect();
+    const viewport = window.innerHeight || 1;
+    const centerOffset = (rect.top + rect.height / 2 - viewport / 2) / viewport;
+    layers.forEach(layer => {
+      const depth = Number(layer.dataset.depth || 0);
+      const translateY = centerOffset * depth * -120;
+      const translateX = centerOffset * depth * 18;
+      layer.style.transform = `translate3d(${translateX}px, ${translateY}px, 0)`;
+    });
+    ticking = false;
+  };
+
+  const requestTick = () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(updateParallax);
+  };
+
+  window.addEventListener('scroll', requestTick, { passive: true });
+  window.addEventListener('resize', requestTick, { passive: true });
+  requestTick();
 }
-mountWhatsAppButton();
 
 const form = document.querySelector('#quoteForm');
 const status = document.querySelector('#formStatus');
@@ -43,7 +106,8 @@ form?.addEventListener('submit', async (event) => {
     ...data,
     source: 'website',
     createdAt: new Date().toISOString(),
-    page: location.href
+    page: location.href,
+    professionalName: cfg.professionalName || ''
   };
 
   if (!cfg.n8nWebhookUrl) {
@@ -68,5 +132,5 @@ form?.addEventListener('submit', async (event) => {
 });
 
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js?v=4').catch(() => {}));
+  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js?v=5').catch(() => {}));
 }
