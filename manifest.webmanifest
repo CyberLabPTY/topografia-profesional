@@ -1,0 +1,9 @@
+{
+  "name": "Topografía Profesional",
+  "short_name": "Topografía",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f5f1",
+  "theme_color": "#101714",
+  "description": "Servicios profesionales de topografía en Panamá"
+}
