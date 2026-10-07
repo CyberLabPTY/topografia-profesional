@@ -2,279 +2,191 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#101714" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#f2f3ee" />
+  <meta name="description" content="Servicios profesionales de topografía en Panamá: levantamientos, replanteos, georreferenciación, linderos, mensuras y documentación técnica." />
   <title>Topografía Profesional | Panamá</title>
-  <meta name="description" content="Servicios profesionales de topografía en Panamá con experiencia de navegación fluida, visualización técnica y contacto directo por WhatsApp." />
   <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="stylesheet" href="styles.css?v=6" />
-  <style>
-    .whatsapp-float{position:fixed;right:18px;bottom:22px;z-index:9999;display:flex;align-items:center;gap:11px;min-height:58px;padding:8px 15px 8px 8px;border-radius:18px;background:#101714;color:#fff!important;border:1px solid rgba(255,255,255,.16);box-shadow:0 18px 48px rgba(16,23,20,.34);text-decoration:none;isolation:isolate}
-    .whatsapp-float:hover,.whatsapp-float:focus-visible{transform:translateY(-2px);box-shadow:0 22px 58px rgba(16,23,20,.4);outline:2px solid rgba(37,211,102,.38);outline-offset:3px}
-    .whatsapp-icon{display:grid;place-items:center;flex:0 0 43px;width:43px;height:43px;border-radius:14px;background:#25D366;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18)}
-    .whatsapp-copy{display:flex;flex-direction:column;line-height:1.08;white-space:nowrap}
-    .whatsapp-copy strong{font-size:.86rem;letter-spacing:.015em}
-    .whatsapp-copy small{margin-top:4px;color:#d6e1db;font-size:.73rem;letter-spacing:.035em}
-    @media(max-width:620px){.whatsapp-float{right:14px;bottom:18px;width:60px;height:60px;min-height:60px;padding:8px;border-radius:19px}.whatsapp-icon{width:44px;height:44px;border-radius:14px}.whatsapp-copy{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}}
-  </style>
+  <link rel="stylesheet" href="styles-v9.css?v=9" />
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="#inicio" aria-label="Inicio">
-      <span class="brand-mark">△</span>
-      <span><strong>TOPÓGRAFA</strong><small>Profesional idónea · Panamá</small></span>
+    <a class="brand jump-link" href="#inicio" aria-label="Ir al inicio">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 44 44"><path d="M11 31 22 11l11 20H11Z"/><circle cx="22" cy="22" r="2.6"/></svg>
+      </span>
+      <span class="brand-copy"><strong>TOPÓGRAFA</strong><small>Profesional idónea · Panamá</small></span>
     </a>
-    <button class="menu-btn" aria-expanded="false" aria-controls="nav" aria-label="Abrir navegación">
-      <span>Menú</span><i class="menu-glyph" aria-hidden="true"><b></b><b></b></i>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="siteNav">
+      <span>Menú</span><i aria-hidden="true"><b></b><b></b></i>
     </button>
-    <nav id="nav" class="nav">
-      <a href="#servicios">Servicios</a>
-      <a href="#inteligencia">Visualización</a>
-      <a href="#proceso">Proceso</a>
-      <a href="#proyectos">Proyectos</a>
-      <a href="#credenciales">Credenciales</a>
-      <a class="nav-cta" href="#cotizar">Cotizar</a>
+    <nav class="site-nav" id="siteNav" aria-label="Navegación principal">
+      <a class="jump-link" href="#servicios">Servicios</a>
+      <a class="jump-link" href="#metodo">Método</a>
+      <a class="jump-link" href="#proyectos">Proyectos</a>
+      <a class="jump-link" href="#credenciales">Idoneidad</a>
+      <a class="nav-cta jump-link" href="#cotizar">Cotizar</a>
     </nav>
   </header>
-  <div class="nav-backdrop" aria-hidden="true"></div>
+  <button class="nav-shade" type="button" aria-label="Cerrar menú"></button>
 
   <main>
-    <section id="inicio" class="hero section hero-depth">
-      <div class="survey-grid" aria-hidden="true"></div>
-      <div class="terrain-field" aria-hidden="true">
-        <svg class="terrain-sheet terrain-sheet-a" data-page-depth="0.035" viewBox="0 0 1200 760" preserveAspectRatio="none">
-          <path d="M-80 620 C160 410 300 710 560 470 S920 210 1280 410"/>
-          <path d="M-40 675 C170 490 350 740 620 525 S980 285 1280 470"/>
-          <path d="M-20 555 C180 355 365 640 585 420 S930 170 1250 350"/>
-        </svg>
-        <svg class="terrain-sheet terrain-sheet-b" data-page-depth="0.075" viewBox="0 0 1200 760" preserveAspectRatio="none">
-          <path d="M70 650 C240 505 360 690 520 575 S750 370 910 455 S1110 560 1240 400"/>
-          <path d="M120 585 C270 445 390 615 540 510 S755 320 910 390 S1090 500 1210 355"/>
-        </svg>
-        <div class="terrain-beacon beacon-a" data-page-depth="0.11"></div>
-        <div class="terrain-beacon beacon-b" data-page-depth="0.16"></div>
-      </div>
-      <div class="hero-copy reveal">
-        <p class="eyebrow">Precisión · Territorio · Confianza</p>
-        <h1>Topografía profesional con profundidad visual, criterio técnico y precisión en campo.</h1>
-        <p class="lead">Una experiencia web más fluida y moderna para representar levantamientos, linderos, replanteos, georreferenciación y documentación técnica con una estética profesional inspirada en capas, relieve y lectura del territorio.</p>
+    <section id="inicio" class="hero section-anchor">
+      <div class="hero-copy">
+        <p class="kicker">Precisión · Territorio · Confianza</p>
+        <h1>Topografía profesional que convierte el terreno en decisiones claras.</h1>
+        <p class="hero-lead">Levantamientos, replanteos, georreferenciación y documentación técnica con una presentación visual moderna, precisa y fácil de entender.</p>
         <div class="hero-actions">
-          <a class="btn primary" href="#cotizar">Solicitar cotización</a>
-          <a class="btn ghost" href="#proyectos">Ver proyectos</a>
+          <a class="button primary jump-link" href="#cotizar">Solicitar cotización</a>
+          <a class="button secondary jump-link" href="#proyectos">Ver trabajo técnico</a>
         </div>
-        <div class="status-row">
+        <div class="hero-proof" aria-label="Indicadores profesionales">
           <span><b>Idoneidad</b><small>Verificable</small></span>
-          <span><b>Experiencia</b><small>Trabajo de campo</small></span>
+          <span><b>Campo</b><small>Medición técnica</small></span>
           <span><b>Cobertura</b><small>Panamá</small></span>
         </div>
       </div>
 
-      <div class="hero-visual reveal depth-stage" aria-label="Visualización técnica en capas">
-        <div class="depth-shell parallax-shell">
-          <div class="depth-back layer" data-depth="0.08"></div>
-          <div class="depth-grid layer" data-depth="0.12"></div>
-          <div class="depth-contours layer" data-depth="0.18">
-            <svg viewBox="0 0 620 620" role="img" aria-label="Relieve y curvas de nivel">
-              <path d="M48 440c94-128 184-157 280-138 96 19 157-56 246-87" />
-              <path d="M30 490c101-136 197-173 307-153 91 17 153-47 245-94" />
-              <path d="M72 394c77-104 148-125 236-114 86 11 148-45 220-70" />
-              <path d="M108 342c67-79 126-95 202-89 82 6 130-38 192-58" />
-              <path d="M145 296c55-61 105-72 170-67 64 5 109-27 158-45" />
-            </svg>
-          </div>
-          <div class="depth-surface layer" data-depth="0.24">
-            <svg viewBox="0 0 620 620" role="img" aria-label="Parcela y puntos de control">
-              <polygon points="156,148 440,176 392,462 124,431" />
-              <line x1="156" y1="148" x2="440" y2="176" />
-              <line x1="440" y1="176" x2="392" y2="462" />
-              <line x1="392" y1="462" x2="124" y2="431" />
-              <line x1="124" y1="431" x2="156" y2="148" />
-              <circle cx="156" cy="148" r="7" />
-              <circle cx="440" cy="176" r="7" />
-              <circle cx="392" cy="462" r="7" />
-              <circle cx="124" cy="431" r="7" />
-            </svg>
-          </div>
-          <div class="network-overlay layer" data-depth="0.3">
-            <div class="network-line l1"></div>
-            <div class="network-line l2"></div>
-            <div class="network-node n1"></div>
-            <div class="network-node n2"></div>
-            <div class="network-node n3"></div>
-            <div class="network-node n4"></div>
-          </div>
-          <div class="depth-card metric-a layer" data-depth="0.28">
-            <small>CONTROL</small>
-            <strong>± 0.02 m</strong>
-            <span>Precisión de referencia</span>
-          </div>
-          <div class="depth-card metric-b layer" data-depth="0.34">
-            <small>MAPA DE RELIEVE</small>
-            <strong>Capas técnicas</strong>
-            <span>Datos, curvas y red</span>
-          </div>
-          <div class="depth-card metric-c layer" data-depth="0.22">
-            <small>LECTURA TERRITORIAL</small>
-            <strong>N / E / Cota</strong>
-            <span>Visualización jerárquica</span>
-          </div>
-        </div>
-      </div>
+      <div class="field-scene" aria-label="Escena técnica de topografía en campo">
+        <div class="field-sky" aria-hidden="true"></div>
+        <div class="field-horizon" aria-hidden="true"></div>
+        <svg class="field-lines" viewBox="0 0 760 640" aria-hidden="true">
+          <path d="M-40 506C125 382 246 545 395 432s285-140 425-58"/>
+          <path d="M-25 548C145 430 268 582 432 478s278-116 382-56"/>
+          <path d="M15 465c116-91 242 27 356-52s229-116 367-71"/>
+        </svg>
 
-      <div class="hero-dock reveal" aria-label="Accesos rápidos principales">
-        <a class="dock-pill active" href="#servicios">Servicios</a>
-        <a class="dock-pill" href="#inteligencia">Visualización</a>
-        <a class="dock-pill" href="#proceso">Proceso</a>
-        <a class="dock-pill" href="#proyectos">Portafolio</a>
-        <a class="dock-pill" href="#credenciales">Idoneidad</a>
-        <a class="dock-pill" href="#cotizar">Contacto</a>
-      </div>
-    </section>
-
-    <section id="servicios" class="section shell">
-      <div class="section-head reveal">
-        <p class="eyebrow">Servicios</p>
-        <h2>Soluciones topográficas para cada etapa del proyecto.</h2>
-        <p>No solo se muestran servicios: se presentan con una estructura limpia, lectura rápida y sensación de plataforma técnica moderna.</p>
-      </div>
-      <div class="cards">
-        <article class="card reveal"><span>01</span><h3>Levantamientos topográficos</h3><p>Captura precisa de terreno, estructuras y elementos existentes para diseño, planificación y documentación.</p></article>
-        <article class="card reveal"><span>02</span><h3>Linderos y mensuras</h3><p>Ubicación y comprobación de límites, medidas y referencias físicas del terreno.</p></article>
-        <article class="card reveal"><span>03</span><h3>Replanteos</h3><p>Traslado de ejes, puntos y cotas del proyecto al terreno para ejecución de obra.</p></article>
-        <article class="card reveal"><span>04</span><h3>Georreferenciación</h3><p>Posicionamiento y control de coordenadas para documentación técnica y análisis territorial.</p></article>
-        <article class="card reveal"><span>05</span><h3>Planos y documentación</h3><p>Preparación ordenada de información de campo y planos técnicos según el alcance contratado.</p></article>
-        <article class="card reveal"><span>06</span><h3>Asesoría técnica</h3><p>Orientación inicial para definir qué servicio requiere el cliente antes del trabajo de campo.</p></article>
-      </div>
-    </section>
-
-    <section id="inteligencia" class="section deep-band">
-      <div class="shell visual-lab">
-        <div class="section-head reveal">
-          <p class="eyebrow">Visualización profesional</p>
-          <h2>Capas, relieve y lectura jerárquica en una interfaz más viva.</h2>
-          <p>Esta área convierte la información técnica en una experiencia visual más rica: mapas de relieve, redes jerárquicas y líneas temporales contorneadas con navegación horizontal frontal.</p>
+        <div class="instrument station" aria-hidden="true">
+          <div class="station-head"><span class="lens"></span><span class="screen"></span></div>
+          <div class="station-neck"></div>
+          <div class="tripod-leg leg-a"></div><div class="tripod-leg leg-b"></div><div class="tripod-leg leg-c"></div>
         </div>
 
-        <div class="visual-panel reveal">
-          <div class="visual-tabs" role="tablist" aria-label="Visualizaciones técnicas">
-            <button class="visual-tab active" type="button" data-panel="relieve" aria-selected="true">Mapa de relieve</button>
-            <button class="visual-tab" type="button" data-panel="red" aria-selected="false">Red jerárquica</button>
-            <button class="visual-tab" type="button" data-panel="tiempo" aria-selected="false">Capas temporales</button>
-          </div>
-
-          <div class="visual-panels">
-            <article class="visual-card active" id="panel-relieve">
-              <div class="visual-copy">
-                <small>RELIEVE DE DATOS</small>
-                <h3>Curvas de nivel, valles y montañas para representar proximidad, intensidad o detalle técnico.</h3>
-                <p>Ideal para que la web se sienta más inmersiva y menos plana. Sirve para transmitir trabajo de campo, lectura del terreno y profundidad profesional sin perder fluidez.</p>
-              </div>
-              <div class="visual-art relief-art" aria-hidden="true">
-                <span class="ridge r1"></span><span class="ridge r2"></span><span class="ridge r3"></span><span class="ridge r4"></span><span class="ridge r5"></span>
-                <div class="altitude-tag t1">Cota 124.8</div>
-                <div class="altitude-tag t2">Cota 137.2</div>
-                <div class="altitude-tag t3">Pendiente 6.2%</div>
-              </div>
-            </article>
-
-            <article class="visual-card" id="panel-red">
-              <div class="visual-copy">
-                <small>RED JERÁRQUICA</small>
-                <h3>Relaciones, jerarquías y niveles técnicos con nodos conectados sobre un campo contorneado.</h3>
-                <p>Puede funcionar para mostrar flujos de trabajo, estructura documental, parentescos de datos o ramas de proyectos, evitando las cajas aburridas tradicionales.</p>
-              </div>
-              <div class="visual-art network-art" aria-hidden="true">
-                <div class="tree-core">BASE</div>
-                <div class="tree-node a">Campo</div>
-                <div class="tree-node b">Procesamiento</div>
-                <div class="tree-node c">Entrega</div>
-                <div class="tree-node d">Planos</div>
-                <div class="tree-node e">Coordenadas</div>
-                <div class="tree-node f">Control</div>
-                <span class="branch b1"></span><span class="branch b2"></span><span class="branch b3"></span><span class="branch b4"></span><span class="branch b5"></span><span class="branch b6"></span>
-              </div>
-            </article>
-
-            <article class="visual-card" id="panel-tiempo">
-              <div class="visual-copy">
-                <small>CAPAS TEMPORALES</small>
-                <h3>Etapas del trabajo técnico representadas como bandas de relieve y profundidad.</h3>
-                <p>Una forma más elegante de representar progreso, eras, hitos o fases de un proyecto topográfico sin recurrir a timelines rígidos y pesados.</p>
-              </div>
-              <div class="visual-art timeline-art" aria-hidden="true">
-                <div class="era e1"><strong>Solicitud</strong><span>Recepción inicial</span></div>
-                <div class="era e2"><strong>Campo</strong><span>Levantamiento y control</span></div>
-                <div class="era e3"><strong>Procesado</strong><span>Curvas, coordenadas, planos</span></div>
-                <div class="era e4"><strong>Entrega</strong><span>Documentación técnica</span></div>
-              </div>
-            </article>
-          </div>
+        <div class="instrument prism" aria-hidden="true">
+          <div class="prism-head"><span></span></div><div class="prism-pole"></div>
         </div>
+
+        <div class="measure-beam" aria-hidden="true"></div>
+        <div class="measure-point point-a" aria-hidden="true"></div>
+        <div class="measure-point point-b" aria-hidden="true"></div>
+        <div class="measure-point point-c" aria-hidden="true"></div>
+
+        <div class="field-readout readout-a"><small>ESTACIÓN</small><b>TS-01</b><span>Control activo</span></div>
+        <div class="field-readout readout-b"><small>LECTURA</small><b>± 0.02 m</b><span>Referencia técnica</span></div>
+        <div class="field-readout readout-c"><small>PUNTO</small><b>P-104</b><span>N / E / Cota</span></div>
+        <div class="field-watermark" aria-hidden="true">△</div>
+      </div>
+
+      <nav class="quick-dock" aria-label="Accesos rápidos">
+        <a class="jump-link" href="#servicios">Servicios</a>
+        <a class="jump-link" href="#metodo">Cómo trabaja</a>
+        <a class="jump-link" href="#proyectos">Portafolio</a>
+        <a class="jump-link" href="#credenciales">Idoneidad</a>
+        <a class="jump-link" href="#cotizar">Contacto</a>
+      </nav>
+    </section>
+
+    <section id="servicios" class="services section-anchor">
+      <div class="section-intro">
+        <p class="kicker">Servicios profesionales</p>
+        <h2>Información técnica organizada como un sistema, no como una lista de cajas.</h2>
+        <p>Cada servicio muestra qué se mide, para qué sirve y qué resultado obtiene el cliente.</p>
+      </div>
+
+      <div class="service-mosaic">
+        <article class="service-tile tile-main">
+          <div class="tile-index">01</div>
+          <div><small>BASE DEL PROYECTO</small><h3>Levantamiento topográfico</h3><p>Captura de terreno, estructuras, desniveles y referencias para diseño, planificación y documentación.</p></div>
+          <div class="tile-diagram terrain-diagram" aria-hidden="true"><i></i><i></i><i></i><span>P1</span><span>P2</span><span>P3</span></div>
+        </article>
+        <article class="service-tile"><div class="tile-index">02</div><small>LÍMITES</small><h3>Linderos y mensuras</h3><p>Comprobación de límites, medidas y referencias del terreno.</p><div class="micro-line" aria-hidden="true"></div></article>
+        <article class="service-tile accent-tile"><div class="tile-index">03</div><small>OBRA</small><h3>Replanteos</h3><p>Traslado de ejes, cotas y puntos del proyecto al terreno.</p><div class="crosshair" aria-hidden="true"></div></article>
+        <article class="service-tile wide-tile"><div class="tile-index">04</div><div><small>COORDENADAS</small><h3>Georreferenciación</h3><p>Control espacial para documentación y lectura territorial.</p></div><div class="coord-chip"><b>N 998456.22</b><b>E 661024.89</b><span>Cota 124.8</span></div></article>
+        <article class="service-tile"><div class="tile-index">05</div><small>ENTREGA</small><h3>Planos y documentación</h3><p>Información de campo organizada para consulta y entrega técnica.</p><div class="sheet-mark" aria-hidden="true"></div></article>
       </div>
     </section>
 
-    <section id="proceso" class="section dark-band">
-      <div class="shell process-grid">
-        <div class="section-head reveal"><p class="eyebrow">Proceso</p><h2>Del primer contacto al entregable técnico.</h2></div>
-        <ol class="timeline reveal">
-          <li><b>1</b><div><h3>Solicitud</h3><p>El cliente describe ubicación, tipo de servicio y necesidad.</p></div></li>
-          <li><b>2</b><div><h3>Evaluación</h3><p>Se revisa el alcance y se solicitan documentos o datos faltantes.</p></div></li>
-          <li><b>3</b><div><h3>Trabajo de campo</h3><p>Se realiza el levantamiento o replanteo con metodología adecuada.</p></div></li>
-          <li><b>4</b><div><h3>Procesamiento y entrega</h3><p>Se ordenan resultados, planos y documentación acordada.</p></div></li>
-        </ol>
+    <section id="metodo" class="method section-anchor">
+      <div class="section-intro compact">
+        <p class="kicker">Método de trabajo</p>
+        <h2>Un recorrido instructivo que encaja etapa por etapa.</h2>
+      </div>
+      <div class="method-mosaic">
+        <article class="method-step step-1"><span>01</span><div><small>INICIO</small><h3>Solicitud</h3><p>Ubicación, tipo de servicio y necesidad.</p></div></article>
+        <article class="method-step step-2"><span>02</span><div><small>ANÁLISIS</small><h3>Evaluación</h3><p>Alcance, documentos y referencias disponibles.</p></div></article>
+        <article class="method-step step-3"><span>03</span><div><small>CAMPO</small><h3>Medición</h3><p>Equipo, puntos de control y registro técnico.</p></div><div class="mini-station" aria-hidden="true"><i></i><b></b></div></article>
+        <article class="method-step step-4"><span>04</span><div><small>RESULTADO</small><h3>Procesamiento y entrega</h3><p>Datos, planos y documentación acordada.</p></div></article>
       </div>
     </section>
 
-    <section id="proyectos" class="section shell">
-      <div class="section-head reveal"><p class="eyebrow">Portafolio</p><h2>Proyectos con contexto técnico, lectura visual y mejor jerarquía.</h2></div>
-      <div class="project-grid">
-        <article class="project reveal"><div class="project-art a"></div><div><small>LEVANTAMIENTO</small><h3>Proyecto residencial</h3><p>Ficha preparada para ubicación general, alcance, método y resultado.</p></div></article>
-        <article class="project reveal"><div class="project-art b"></div><div><small>REPLANTEO</small><h3>Obra civil</h3><p>Espacio para documentar ejes, control de cotas y puntos de referencia.</p></div></article>
-        <article class="project reveal"><div class="project-art c"></div><div><small>GEORREFERENCIACIÓN</small><h3>Terreno y linderos</h3><p>Resumen visual con mapa, datos autorizados y entregables.</p></div></article>
+    <section id="proyectos" class="projects section-anchor">
+      <div class="section-intro light-copy">
+        <p class="kicker">Portafolio técnico</p>
+        <h2>Escenas de trabajo que explican el servicio sin saturar la pantalla.</h2>
+        <p>La información visual permanece activa, pero el desplazamiento de la página queda libre y estable.</p>
+      </div>
+
+      <div class="project-mosaic">
+        <article class="project-panel project-a">
+          <div class="project-scene">
+            <svg viewBox="0 0 700 420" aria-hidden="true"><path d="M-20 328c116-112 222 28 336-54s232-118 418-42"/><path d="M-20 375c132-100 246 32 366-48s226-95 376-32"/><polygon points="122,90 516,118 558,312 166,340"/></svg>
+            <div class="scan-line"></div><span class="node n1"></span><span class="node n2"></span><span class="node n3"></span>
+            <div class="project-watermark">△</div>
+            <div class="scene-label"><small>CONTROL DE CAMPO</small><b>Levantamiento</b></div>
+          </div>
+          <div class="project-copy"><span>01</span><div><small>LEVANTAMIENTO</small><h3>Proyecto residencial</h3><p>Terreno, cotas y referencias para una base técnica clara.</p></div></div>
+        </article>
+
+        <article class="project-panel project-b">
+          <div class="project-copy"><span>02</span><div><small>REPLANTEO</small><h3>Obra civil</h3><p>Ejes, puntos y control de cotas en ejecución.</p></div></div>
+          <div class="project-scene">
+            <div class="cross-grid" aria-hidden="true"></div><div class="axis-line axis-a"></div><div class="axis-line axis-b"></div><span class="target t1"></span><span class="target t2"></span>
+            <div class="project-watermark">△</div><div class="scene-label"><small>EJES Y COTAS</small><b>Replanteo</b></div>
+          </div>
+        </article>
+
+        <article class="project-panel project-c">
+          <div class="project-scene">
+            <div class="geo-rings" aria-hidden="true"><i></i><i></i><i></i></div><span class="geo-dot d1"></span><span class="geo-dot d2"></span><span class="geo-dot d3"></span>
+            <div class="project-watermark">△</div><div class="scene-label"><small>CONTROL TERRITORIAL</small><b>Georreferenciación</b></div>
+          </div>
+          <div class="project-copy"><span>03</span><div><small>COORDENADAS</small><h3>Terreno y linderos</h3><p>Relación espacial, puntos de control y referencias verificables.</p></div></div>
+        </article>
       </div>
     </section>
 
-    <section id="credenciales" class="section credential-section">
-      <div class="shell credential-card reveal">
-        <div>
-          <p class="eyebrow">Confianza profesional</p>
-          <h2>Topógrafa idónea en Panamá.</h2>
-          <p>Esta sección quedará destinada a nombre completo, número de idoneidad/licencia, formación, experiencia y asociaciones profesionales autorizadas para publicación.</p>
-        </div>
-        <div class="credential-placeholder"><span>✓</span><strong>IDONEIDAD PROFESIONAL</strong><small>Datos pendientes de personalización</small></div>
+    <section id="credenciales" class="credentials section-anchor">
+      <div class="credential-shell">
+        <div><p class="kicker">Confianza profesional</p><h2>Topógrafa idónea en Panamá.</h2><p>Este espacio queda preparado para el nombre completo, número de idoneidad/licencia, experiencia y datos que ella autorice publicar.</p></div>
+        <div class="credential-seal"><span>△</span><strong>IDONEIDAD</strong><small>Datos pendientes de personalización</small></div>
       </div>
     </section>
 
-    <section id="cotizar" class="section shell quote-grid">
-      <div class="section-head reveal">
-        <p class="eyebrow">Cotización inteligente</p>
-        <h2>Cuéntanos qué necesitas.</h2>
-        <p>El formulario está preparado para conectarse a n8n mediante webhook seguro. Mientras la automatización no esté activa, funciona en modo demostración sin enviar datos.</p>
-      </div>
-      <form id="quoteForm" class="quote-form reveal">
+    <section id="cotizar" class="quote section-anchor">
+      <div class="quote-intro"><p class="kicker">Cotización inteligente</p><h2>Cuéntanos qué necesitas.</h2><p>Preparado para n8n mediante webhook seguro. Mientras la automatización no esté activa, el formulario no envía datos.</p></div>
+      <form id="quoteForm" class="quote-form">
         <label>Nombre completo<input name="name" required autocomplete="name" /></label>
         <label>WhatsApp<input name="phone" required inputmode="tel" autocomplete="tel" /></label>
         <label>Tipo de servicio<select name="service" required><option value="">Seleccionar</option><option>Levantamiento topográfico</option><option>Linderos / mensura</option><option>Replanteo</option><option>Georreferenciación</option><option>Planos / documentación</option><option>Otro</option></select></label>
         <label>Ubicación aproximada<input name="location" placeholder="Provincia / corregimiento / sector" required /></label>
         <label>Área aproximada<input name="area" placeholder="Ej. 800 m², 2 ha, no sé" /></label>
         <label class="full">Descripción<textarea name="message" rows="5" required placeholder="Describe brevemente el trabajo que necesitas..."></textarea></label>
-        <label class="consent full"><input type="checkbox" required /> Autorizo el uso de estos datos únicamente para responder esta solicitud.</label>
-        <div class="form-actions full"><button class="btn primary" type="submit">Enviar solicitud</button><span id="formStatus" aria-live="polite"></span></div>
+        <label class="consent full"><input type="checkbox" required /> <span>Autorizo el uso de estos datos únicamente para responder esta solicitud.</span></label>
+        <div class="form-actions full"><button class="button primary" type="submit">Enviar solicitud</button><span id="formStatus" aria-live="polite"></span></div>
       </form>
     </section>
   </main>
 
   <footer class="footer">
     <div><strong>Topografía Profesional</strong><p>Panamá · Sitio en fase de personalización</p></div>
-    <div><a href="#inicio">Volver arriba</a><a href="#cotizar">Contacto</a></div>
+    <nav><a class="jump-link" href="#inicio">Inicio</a><a class="jump-link" href="#cotizar">Contacto</a></nav>
   </footer>
 
   <a class="whatsapp-float" href="https://wa.me/50769759603?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20informaci%C3%B3n%20sobre%20un%20servicio%20de%20topograf%C3%ADa." target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp al 6975-9603">
-    <span class="whatsapp-icon" aria-hidden="true"><svg viewBox="0 0 32 32" width="26" height="26"><path fill="#fff" d="M16.04 3C9.4 3 4 8.3 4 14.82c0 2.28.66 4.5 1.92 6.4L4 28l7-1.83a12.2 12.2 0 0 0 5.02 1.08h.01C22.67 27.25 28 21.96 28 15.4 28 8.83 22.68 3 16.04 3Zm6.98 17.04c-.3.84-1.74 1.58-2.4 1.68-.62.1-1.4.14-2.26-.13-.52-.17-1.2-.39-2.07-.76-3.65-1.58-6.03-5.27-6.21-5.51-.18-.25-1.49-1.98-1.49-3.78 0-1.8.94-2.69 1.28-3.06.33-.37.73-.46.97-.46h.7c.23 0 .53-.09.83.63.3.73 1.03 2.52 1.12 2.7.1.2.16.42.03.67-.12.25-.18.4-.36.61-.19.22-.39.48-.56.64-.19.19-.38.4-.16.78.21.37.95 1.56 2.04 2.53 1.4 1.25 2.58 1.64 2.95 1.83.37.18.58.15.8-.1.21-.25.91-1.06 1.15-1.43.25-.37.49-.3.83-.18.34.12 2.16 1.02 2.53 1.2.37.19.61.28.7.43.1.16.1.9-.2 1.72Z"/></svg></span>
-    <span class="whatsapp-copy"><strong>WhatsApp</strong><small>6975-9603</small></span>
+    <span aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16.04 3C9.4 3 4 8.3 4 14.82c0 2.28.66 4.5 1.92 6.4L4 28l7-1.83a12.2 12.2 0 0 0 5.02 1.08h.01C22.67 27.25 28 21.96 28 15.4 28 8.83 22.68 3 16.04 3Zm6.98 17.04c-.3.84-1.74 1.58-2.4 1.68-.62.1-1.4.14-2.26-.13-.52-.17-1.2-.39-2.07-.76-3.65-1.58-6.03-5.27-6.21-5.51-.18-.25-1.49-1.98-1.49-3.78 0-1.8.94-2.69 1.28-3.06.33-.37.73-.46.97-.46h.7c.23 0 .53-.09.83.63.3.73 1.03 2.52 1.12 2.7.1.2.16.42.03.67-.12.25-.18.4-.36.61-.19.22-.39.48-.56.64-.19.19-.38.4-.16.78.21.37.95 1.56 2.04 2.53 1.4 1.25 2.58 1.64 2.95 1.83.37.18.58.15.8-.1.21-.25.91-1.06 1.15-1.43.25-.37.49-.3.83-.18.34.12 2.16 1.02 2.53 1.2.37.19.61.28.7.43.1.16.1.9-.2 1.72Z"/></svg></span>
   </a>
 
-  <script src="config.js?v=6"></script>
-  <script src="app.js?v=6" defer></script>
+  <script src="config.js?v=9"></script>
+  <script src="app-v9.js?v=9" defer></script>
 </body>
 </html>
