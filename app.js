@@ -1,11 +1,12 @@
 const cfg = window.SITE_CONFIG || {};
 
 (function loadEnhancementStyles(){
-  if (document.querySelector('link[data-enhancements="v7"]')) return;
+  const old = document.querySelector('link[data-enhancements]');
+  if (old) old.remove();
   const link = document.createElement('link');
   link.rel = 'stylesheet';
-  link.href = './enhancements.css?v=7';
-  link.dataset.enhancements = 'v7';
+  link.href = './enhancements-v8.css?v=8';
+  link.dataset.enhancements = 'v8';
   document.head.appendChild(link);
 })();
 
@@ -51,7 +52,7 @@ const sectionObserver = new IntersectionObserver((entries) => {
   if (!target) return;
   dockItems.forEach(item => item.classList.remove('active'));
   target.classList.add('active');
-}, { rootMargin: '-20% 0px -55% 0px', threshold: [0.05, 0.2, 0.45] });
+}, { rootMargin: '-20% 0px -55% 0px', threshold: [0.05,0.2,0.45] });
 sectionMap.forEach((_, section) => sectionObserver.observe(section));
 
 dockItems.forEach(item => item.addEventListener('click', () => {
@@ -77,19 +78,41 @@ tabs.forEach(tab => tab.addEventListener('click', () => {
   panels[key]?.classList.add('active');
 }));
 
-const projectLabels = [
-  ['LEVANTAMIENTO','CONTROL DE CAMPO'],
-  ['REPLANTEO','EJES Y COTAS'],
-  ['GEOREFERENCIA','CONTROL TERRITORIAL']
+const projectData = [
+  {index:'01', label:'LEVANTAMIENTO', sub:'CONTROL DE CAMPO', meta:['Terreno','Cotas','Plano base']},
+  {index:'02', label:'REPLANTEO', sub:'EJES Y COTAS', meta:['Ejes','Control','Obra civil']},
+  {index:'03', label:'GEOREFERENCIA', sub:'CONTROL TERRITORIAL', meta:['Coordenadas','Linderos','Referencia']}
 ];
 
 const projectArts = [...document.querySelectorAll('.project-art')];
 projectArts.forEach((art, index) => {
-  if (art.querySelector('.project-scene')) return;
-  const label = projectLabels[index] || ['TOPOGRAFÍA','CONTROL TÉCNICO'];
-  const scene = document.createElement('div');
-  scene.className = 'project-scene';
+  const project = art.closest('.project');
+  const content = project?.querySelector(':scope > div:last-child');
+  const data = projectData[index] || projectData[0];
+  project?.setAttribute('data-index', data.index);
+  content?.classList.add('project-content');
+
+  if (content && !content.querySelector('.project-meta')) {
+    const meta = document.createElement('div');
+    meta.className = 'project-meta';
+    meta.innerHTML = data.meta.map(item => `<span>${item}</span>`).join('');
+    content.appendChild(meta);
+  }
+
+  let scene = art.querySelector('.project-scene');
+  if (!scene) {
+    scene = document.createElement('div');
+    scene.className = 'project-scene';
+    art.appendChild(scene);
+  }
+
   scene.innerHTML = `
+    <svg class="project-topology" viewBox="0 0 700 420" aria-hidden="true" preserveAspectRatio="none">
+      <path d="M-30 330 C90 205 190 365 305 265 S500 120 750 215"/>
+      <path d="M-20 380 C105 260 215 405 340 310 S520 165 730 260"/>
+      <path d="M20 285 C125 160 220 315 330 225 S505 90 690 170"/>
+      <polygon points="135,92 520,118 565,315 170,342"/>
+    </svg>
     <div class="project-sweep" aria-hidden="true"></div>
     <span class="project-vector v1" aria-hidden="true"></span>
     <span class="project-vector v2" aria-hidden="true"></span>
@@ -97,10 +120,10 @@ projectArts.forEach((art, index) => {
     <span class="project-marker m1" aria-hidden="true"></span>
     <span class="project-marker m2" aria-hidden="true"></span>
     <span class="project-marker m3" aria-hidden="true"></span>
-    <div class="project-coords c1" aria-hidden="true"><span>${label[0]}</span><b>ESCENA TÉCNICA</b></div>
-    <div class="project-coords c2" aria-hidden="true"><span>${label[1]}</span><b>VISUALIZACIÓN</b></div>
-    <div class="project-altitude" aria-hidden="true">DATOS<br>CAMPO</div>`;
-  art.appendChild(scene);
+    <div class="project-coords c1" aria-hidden="true"><span>${data.label}</span><b>N 998456.22 · E 661024.89</b></div>
+    <div class="project-coords c2" aria-hidden="true"><span>${data.sub}</span><b>± 0.02 m</b></div>
+    <div class="project-altitude" aria-hidden="true">CONTROL<br>RTK</div>
+    <div class="project-hud" aria-hidden="true"><span>LECTURA ACTIVA</span><span>CAPA 03</span><span>CAMPO</span></div>`;
 });
 
 if (!prefersReducedMotion) {
@@ -129,13 +152,16 @@ if (!prefersReducedMotion) {
     const viewport = Math.max(window.innerHeight, 1);
     projectArts.forEach((art, index) => {
       const rect = art.getBoundingClientRect();
-      const raw = (viewport * 0.62 - (rect.top + rect.height / 2)) / (viewport + rect.height);
-      const progress = Math.max(-0.55, Math.min(0.55, raw));
+      const center = rect.top + rect.height / 2;
+      const progress = Math.max(-0.58, Math.min(0.58, (viewport * 0.58 - center) / (viewport + rect.height)));
       const scene = art.querySelector('.project-scene');
-      if (scene) scene.style.setProperty('--scene-shift', `${progress * (26 + index * 4)}px`);
-      art.style.setProperty('--terrain-shift', `${progress * -20}px`);
-      art.style.setProperty('--grid-x', `${progress * 12}px`);
-      art.style.setProperty('--grid-y', `${progress * -14}px`);
+      if (scene) {
+        scene.style.setProperty('--sceneX', `${progress * (14 + index * 3)}px`);
+        scene.style.setProperty('--sceneY', `${progress * (34 + index * 5)}px`);
+      }
+      art.style.setProperty('--terrain-shift', `${progress * -26}px`);
+      art.style.setProperty('--grid-x', `${progress * 18}px`);
+      art.style.setProperty('--grid-y', `${progress * -20}px`);
     });
 
     ticking = false;
@@ -147,8 +173,8 @@ if (!prefersReducedMotion) {
     requestAnimationFrame(updateParallax);
   }
 
-  window.addEventListener('scroll', requestParallax, { passive: true });
-  window.addEventListener('resize', requestParallax, { passive: true });
+  window.addEventListener('scroll', requestParallax, { passive:true });
+  window.addEventListener('resize', requestParallax, { passive:true });
   requestParallax();
 }
 
@@ -159,10 +185,10 @@ form?.addEventListener('submit', async (event) => {
   const data = Object.fromEntries(new FormData(form).entries());
   const payload = {
     ...data,
-    source: 'website',
-    createdAt: new Date().toISOString(),
-    page: location.href,
-    professionalName: cfg.professionalName || ''
+    source:'website',
+    createdAt:new Date().toISOString(),
+    page:location.href,
+    professionalName:cfg.professionalName || ''
   };
 
   if (!cfg.n8nWebhookUrl) {
@@ -173,9 +199,9 @@ form?.addEventListener('submit', async (event) => {
   status.textContent = 'Enviando…';
   try {
     const response = await fetch(cfg.n8nWebhookUrl, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(payload)
     });
     if (!response.ok) throw new Error('HTTP ' + response.status);
     form.reset();
@@ -187,5 +213,5 @@ form?.addEventListener('submit', async (event) => {
 });
 
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js?v=7').catch(() => {}));
+  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js?v=8').catch(() => {}));
 }
