@@ -1,0 +1,257 @@
+/* v10 — navegación estable + escena instrumental topográfica profesional */
+
+:root{
+  --v10-forest:#1f443c;
+  --v10-forest-2:#2f6054;
+  --v10-mist:#e7eee9;
+  --v10-panel:rgba(246,248,244,.94);
+  --v10-line:rgba(31,68,60,.18);
+  --v10-lime:#b8ef62;
+}
+
+/* Navegación: la sección activa se reconoce al instante sin animar el scroll. */
+.site-nav a,
+.quick-dock a{
+  transition:background-color .16s ease,color .16s ease,border-color .16s ease;
+}
+.site-nav a.section-active:not(.nav-cta){
+  color:var(--v10-forest);
+  font-weight:850;
+}
+.site-nav a.section-active:not(.nav-cta)::after{
+  content:"";
+  display:block;
+  height:2px;
+  margin-top:-6px;
+  border-radius:999px;
+  background:var(--v10-forest);
+}
+.quick-dock a.section-active{
+  background:var(--v10-forest);
+  color:#fff;
+}
+
+/* Escena de campo más métrica y menos ilustrativa. */
+.field-scene{
+  min-height:610px;
+  background:
+    radial-gradient(circle at 77% 14%,rgba(255,255,255,.72),transparent 20%),
+    linear-gradient(180deg,#dfe9e3 0%,#cbdad1 43%,#9ab6a7 44%,#769887 68%,#557565 100%);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.42),0 24px 60px rgba(31,68,60,.12);
+  contain:layout paint;
+}
+.field-scene::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);
+  background-size:38px 38px;
+  mask-image:linear-gradient(to bottom,rgba(0,0,0,.82),transparent 76%);
+  z-index:0;
+}
+.field-sky,.field-horizon,.field-lines,.instrument,.measure-beam,.measure-point,.field-readout,.field-watermark{z-index:2}
+.field-watermark{
+  font-size:13rem;
+  color:rgba(255,255,255,.07);
+  transform:translate(-50%,-50%) rotate(-4deg);
+}
+
+/* Total station más detallada visualmente. */
+.station{z-index:5;filter:drop-shadow(0 16px 16px rgba(24,48,42,.18))}
+.station-head{
+  width:126px;
+  height:86px;
+  left:34px;
+  border-radius:20px 20px 14px 14px;
+  background:linear-gradient(180deg,#f2c744 0%,#ddb02f 58%,#bd8d20 100%);
+  border:4px solid #31483f;
+  animation:none!important;
+}
+.station-head::before{
+  content:"";
+  position:absolute;
+  left:20px;
+  top:-15px;
+  width:80px;
+  height:22px;
+  border-radius:12px 12px 5px 5px;
+  background:#3a5047;
+  box-shadow:inset 0 -4px 0 rgba(255,255,255,.06);
+}
+.station-head::after{
+  left:55px;
+  bottom:-35px;
+  width:17px;
+  height:36px;
+  border-radius:3px;
+  background:linear-gradient(#435b51,#2e4139);
+}
+.station-head .lens{
+  left:-18px;
+  top:22px;
+  width:39px;
+  height:39px;
+  border:7px solid #64786e;
+  background:radial-gradient(circle at 38% 35%,#8aa79a 0 10%,#24362f 28%,#111a17 62%);
+}
+.station-head .screen{
+  right:13px;
+  top:18px;
+  width:45px;
+  height:32px;
+  background:linear-gradient(180deg,#b9d8c9,#789a89);
+  border-color:#41584e;
+  box-shadow:inset 0 0 0 2px rgba(255,255,255,.2);
+}
+.station-base-v10{
+  position:absolute;
+  left:68px;
+  top:109px;
+  width:63px;
+  height:25px;
+  border-radius:8px 8px 14px 14px;
+  background:#33483f;
+  border:3px solid #263831;
+  z-index:3;
+}
+.station-base-v10::before,.station-base-v10::after{
+  content:"";
+  position:absolute;
+  top:5px;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#b8ef62;
+  box-shadow:0 0 0 2px rgba(184,239,98,.18);
+}
+.station-base-v10::before{left:12px}.station-base-v10::after{right:12px}
+.station-keypad-v10{
+  position:absolute;
+  left:70px;
+  top:58px;
+  width:34px;
+  height:16px;
+  border-radius:4px;
+  opacity:.85;
+  background:repeating-linear-gradient(90deg,#31483f 0 4px,transparent 4px 7px);
+}
+
+/* Retícula y referencias métricas. */
+.survey-reticle{
+  position:absolute;
+  left:50%;top:48%;
+  width:128px;height:128px;
+  transform:translate(-50%,-50%);
+  border:1px solid rgba(248,252,249,.64);
+  border-radius:50%;
+  z-index:3;
+  pointer-events:none;
+}
+.survey-reticle::before,.survey-reticle::after{
+  content:"";position:absolute;background:rgba(248,252,249,.72)
+}
+.survey-reticle::before{width:1px;top:-18px;bottom:-18px;left:50%}
+.survey-reticle::after{height:1px;left:-18px;right:-18px;top:50%}
+.survey-reticle i{
+  position:absolute;inset:34px;border:1px solid rgba(184,239,98,.68);border-radius:50%
+}
+.survey-reticle b{
+  position:absolute;left:50%;top:50%;width:8px;height:8px;transform:translate(-50%,-50%);border-radius:50%;background:var(--v10-lime);box-shadow:0 0 0 7px rgba(184,239,98,.12)
+}
+.metric-baseline{
+  position:absolute;
+  left:15%;right:14%;bottom:20%;
+  height:1px;
+  background:rgba(255,255,255,.52);
+  z-index:3;
+}
+.metric-baseline::before,.metric-baseline::after{
+  content:"";position:absolute;top:-5px;width:1px;height:11px;background:rgba(255,255,255,.72)
+}
+.metric-baseline::before{left:0}.metric-baseline::after{right:0}
+.metric-baseline span{
+  position:absolute;left:50%;top:-28px;transform:translateX(-50%);padding:4px 8px;border-radius:999px;background:rgba(31,68,60,.84);color:#fff;font:800 .64rem/1 ui-monospace,monospace;letter-spacing:.06em;white-space:nowrap
+}
+
+/* HUD técnico. Valores de demostración: no se presentan como medición real. */
+.survey-hud{
+  position:absolute;
+  left:16px;right:16px;bottom:16px;
+  z-index:6;
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:10px;
+  pointer-events:none;
+}
+.hud-main,.hud-side{
+  background:rgba(239,246,241,.93);
+  border:1px solid rgba(31,68,60,.18);
+  backdrop-filter:blur(8px);
+  border-radius:18px;
+  box-shadow:0 10px 26px rgba(30,64,55,.1);
+}
+.hud-main{padding:11px 12px}
+.hud-head{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:8px}
+.hud-head strong{font-size:.68rem;letter-spacing:.14em;color:var(--v10-forest);white-space:nowrap}
+.hud-head span{font-size:.62rem;color:#67766e}
+.hud-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.hud-metric{min-width:0;padding:7px 8px;border-radius:10px;background:rgba(255,255,255,.74);border:1px solid rgba(31,68,60,.1)}
+.hud-metric small,.hud-metric b{display:block}
+.hud-metric small{font-size:.56rem;letter-spacing:.08em;color:#697970;font-weight:850}
+.hud-metric b{margin-top:2px;font:850 .78rem/1.1 ui-monospace,monospace;color:#193c34;white-space:nowrap}
+.hud-side{padding:10px 11px;display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.hud-coordinate{padding:6px 7px;border-radius:9px;background:rgba(255,255,255,.66)}
+.hud-coordinate small,.hud-coordinate b{display:block}.hud-coordinate small{font-size:.54rem;color:#6c7a73;letter-spacing:.08em;font-weight:850}.hud-coordinate b{font:800 .72rem/1.1 ui-monospace,monospace;color:#244a41;white-space:nowrap}
+.hud-note{grid-column:1/-1;font-size:.54rem;color:#738078;letter-spacing:.02em;padding:2px 2px 0}
+
+/* Evita que los readouts antiguos compitan con el nuevo HUD. */
+.field-readout.readout-b{top:18px;right:18px}
+.field-readout.readout-c{display:none}
+
+/* Mejor acabado de mosaicos, sin añadir trabajo durante el scroll. */
+.service-tile,.method-step,.project-panel,.credential-shell,.quote-form{
+  box-shadow:0 12px 34px rgba(31,68,60,.055);
+}
+.service-tile,.method-step,.project-panel{
+  transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease;
+}
+@media (hover:hover) and (pointer:fine){
+  .service-tile:hover,.method-step:hover,.project-panel:hover{
+    transform:translateY(-3px);
+    border-color:rgba(31,68,60,.26);
+    box-shadow:0 18px 42px rgba(31,68,60,.1);
+  }
+}
+
+@media(max-width:900px){
+  .field-scene{min-height:590px}
+  .survey-hud{grid-template-columns:1fr;left:12px;right:12px;bottom:12px}
+  .hud-side{grid-template-columns:repeat(4,1fr)}
+  .hud-note{grid-column:1/-1}
+  .hud-grid{grid-template-columns:repeat(5,minmax(0,1fr))}
+}
+
+@media(max-width:620px){
+  .field-scene{min-height:620px;border-radius:30px}
+  .station{left:13%;transform:scale(.88);transform-origin:left bottom}
+  .prism{right:11%;transform:scale(.92);transform-origin:right bottom}
+  .survey-reticle{width:98px;height:98px;top:43%;left:55%}
+  .metric-baseline{left:12%;right:10%;bottom:29%}
+  .field-readout{min-width:108px;padding:8px 9px}
+  .field-readout.readout-a{left:12px;top:12px}
+  .field-readout.readout-b{right:12px;top:12px}
+  .survey-hud{gap:7px}
+  .hud-main{padding:9px}
+  .hud-grid{grid-template-columns:repeat(3,1fr)}
+  .hud-metric:nth-child(4),.hud-metric:nth-child(5){grid-column:auto}
+  .hud-side{grid-template-columns:repeat(2,1fr);padding:8px}
+  .hud-metric b{font-size:.72rem}.hud-coordinate b{font-size:.67rem}
+  .hud-head span{display:none}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .measure-beam,.measure-point,.scan-line,.geo-rings i,.target{animation:none!important}
+}
