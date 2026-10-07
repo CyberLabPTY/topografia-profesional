@@ -1,5 +1,53 @@
 const cfg = window.SITE_CONFIG || {};
 
+// v12 DOM bootstrap: selector persistente, idoneidad protegida y WhatsApp limpio.
+(() => {
+  if (!document.querySelector('.section-hub')) {
+    const shade = document.querySelector('.nav-shade');
+    const hub = document.createElement('nav');
+    hub.className = 'section-hub';
+    hub.setAttribute('aria-label', 'Selector de secciones');
+    hub.innerHTML = `
+      <a class="jump-link" href="#servicios">Servicios</a>
+      <a class="jump-link" href="#tecnologia">Tecnología</a>
+      <a class="jump-link" href="#metodo">Cómo trabaja</a>
+      <a class="jump-link" href="#proyectos">Portafolio</a>
+      <a class="jump-link" href="#credenciales">Idoneidad</a>
+      <a class="jump-link" href="#cotizar">Contacto</a>`;
+    shade?.insertAdjacentElement('afterend', hub);
+  }
+
+  document.querySelector('.quick-dock')?.remove();
+
+  const credential = document.querySelector('#credenciales .credential-shell');
+  if (credential) {
+    credential.classList.add('verified-credential');
+    credential.innerHTML = `
+      <div>
+        <p class="kicker">Confianza profesional</p>
+        <h2>Idoneidad profesional verificada.</h2>
+        <p>Condición profesional vigente y documentación al día. Por seguridad y para prevenir usos indebidos o falsificación, la licencia completa no se publica en este sitio. La condición profesional puede confirmarse por contacto directo cuando sea necesario.</p>
+        <div class="credential-assurance" aria-label="Estado de documentación profesional">
+          <span><b>✓</b><strong>Idoneidad verificada</strong></span>
+          <span><b>✓</b><strong>Documentación al día</strong></span>
+          <span><b>✓</b><strong>Datos sensibles protegidos</strong></span>
+        </div>
+      </div>
+      <div class="credential-seal verified-seal" aria-label="Idoneidad profesional verificada">
+        <span class="verify-check">✓</span>
+        <strong>VERIFICADA</strong>
+        <small>Profesional idónea · Panamá</small>
+        <em>Licencia completa protegida por seguridad</em>
+      </div>`;
+  }
+
+  const wa = document.querySelector('.whatsapp-float');
+  if (wa) {
+    wa.classList.add('whatsapp-glyph');
+    wa.innerHTML = `<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.04 3C9.4 3 4 8.3 4 14.82c0 2.28.66 4.5 1.92 6.4L4 28l7-1.83a12.2 12.2 0 0 0 5.02 1.08h.01C22.67 27.25 28 21.96 28 15.4 28 8.83 22.68 3 16.04 3Zm6.98 17.04c-.3.84-1.74 1.58-2.4 1.68-.62.1-1.4.14-2.26-.13-.52-.17-1.2-.39-2.07-.76-3.65-1.58-6.03-5.27-6.21-5.51-.18-.25-1.49-1.98-1.49-3.78 0-1.8.94-2.69 1.28-3.06.33-.37.73-.46.97-.46h.7c.23 0 .53-.09.83.63.3.73 1.03 2.52 1.12 2.7.1.2.16.42.03.67-.12.25-.18.4-.36.61-.19.22-.39.48-.56.64-.19.19-.38.4-.16.78.21.37.95 1.56 2.04 2.53 1.4 1.25 2.58 1.64 2.95 1.83.37.18.58.15.8-.1.21-.25.91-1.06 1.15-1.43.25-.37.49-.3.83-.18.34.12 2.16 1.02 2.53 1.2.37.19.61.28.7.43.1.16.1.9-.2 1.72Z"/></svg>`;
+  }
+})();
+
 const nav = document.getElementById('siteNav');
 const menu = document.querySelector('.menu-btn');
 const shade = document.querySelector('.nav-shade');
