@@ -4,24 +4,23 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="theme-color" content="#f2f3ee" />
-  <meta name="description" content="Servicios profesionales de topografía en Panamá: levantamientos, replanteos, georreferenciación, linderos, mensuras y documentación técnica." />
+  <meta name="description" content="Servicios profesionales de topografía en Panamá con medición terrestre, georreferenciación, replanteo y visualización técnica con drones." />
   <title>Topografía Profesional | Panamá</title>
   <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="stylesheet" href="styles-v9.css?v=9" />
+  <link rel="stylesheet" href="styles-v9.css?v=11" />
+  <link rel="stylesheet" href="enhancements-v10.css?v=11" />
+  <link rel="stylesheet" href="enhancements-v11.css?v=11" />
 </head>
 <body>
   <header class="site-header">
     <a class="brand jump-link" href="#inicio" aria-label="Ir al inicio">
-      <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 44 44"><path d="M11 31 22 11l11 20H11Z"/><circle cx="22" cy="22" r="2.6"/></svg>
-      </span>
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 44 44"><path d="M11 31 22 11l11 20H11Z"/><circle cx="22" cy="22" r="2.6"/></svg></span>
       <span class="brand-copy"><strong>TOPÓGRAFA</strong><small>Profesional idónea · Panamá</small></span>
     </a>
-    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="siteNav">
-      <span>Menú</span><i aria-hidden="true"><b></b><b></b></i>
-    </button>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="siteNav" aria-label="Abrir navegación"><span>Menú</span><i aria-hidden="true"><b></b><b></b></i></button>
     <nav class="site-nav" id="siteNav" aria-label="Navegación principal">
       <a class="jump-link" href="#servicios">Servicios</a>
+      <a class="jump-link" href="#tecnologia">Tecnología</a>
       <a class="jump-link" href="#metodo">Método</a>
       <a class="jump-link" href="#proyectos">Proyectos</a>
       <a class="jump-link" href="#credenciales">Idoneidad</a>
@@ -33,160 +32,65 @@
   <main>
     <section id="inicio" class="hero section-anchor">
       <div class="hero-copy">
-        <p class="kicker">Precisión · Territorio · Confianza</p>
-        <h1>Topografía profesional que convierte el terreno en decisiones claras.</h1>
-        <p class="hero-lead">Levantamientos, replanteos, georreferenciación y documentación técnica con una presentación visual moderna, precisa y fácil de entender.</p>
-        <div class="hero-actions">
-          <a class="button primary jump-link" href="#cotizar">Solicitar cotización</a>
-          <a class="button secondary jump-link" href="#proyectos">Ver trabajo técnico</a>
-        </div>
-        <div class="hero-proof" aria-label="Indicadores profesionales">
-          <span><b>Idoneidad</b><small>Verificable</small></span>
-          <span><b>Campo</b><small>Medición técnica</small></span>
-          <span><b>Cobertura</b><small>Panamá</small></span>
-        </div>
+        <p class="kicker">Precisión · Territorio · Tecnología</p>
+        <h1>Topografía profesional que mide, interpreta y convierte el terreno en decisiones claras.</h1>
+        <p class="hero-lead">Medición terrestre, replanteo, georreferenciación y captura aérea presentados con una experiencia técnica moderna, clara y orientada a resultados.</p>
+        <div class="hero-actions"><a class="button primary jump-link" href="#cotizar">Solicitar cotización</a><a class="button secondary jump-link" href="#tecnologia">Ver tecnología</a></div>
+        <div class="hero-proof" aria-label="Indicadores profesionales"><span><b>Idoneidad</b><small>Verificable</small></span><span><b>Campo</b><small>Medición técnica</small></span><span><b>Captura aérea</b><small>Dron / fotogrametría</small></span></div>
       </div>
 
-      <div class="field-scene" aria-label="Escena técnica de topografía en campo">
-        <div class="field-sky" aria-hidden="true"></div>
-        <div class="field-horizon" aria-hidden="true"></div>
-        <svg class="field-lines" viewBox="0 0 760 640" aria-hidden="true">
-          <path d="M-40 506C125 382 246 545 395 432s285-140 425-58"/>
-          <path d="M-25 548C145 430 268 582 432 478s278-116 382-56"/>
-          <path d="M15 465c116-91 242 27 356-52s229-116 367-71"/>
-        </svg>
-
-        <div class="instrument station" aria-hidden="true">
-          <div class="station-head"><span class="lens"></span><span class="screen"></span></div>
-          <div class="station-neck"></div>
-          <div class="tripod-leg leg-a"></div><div class="tripod-leg leg-b"></div><div class="tripod-leg leg-c"></div>
-        </div>
-
-        <div class="instrument prism" aria-hidden="true">
-          <div class="prism-head"><span></span></div><div class="prism-pole"></div>
-        </div>
-
-        <div class="measure-beam" aria-hidden="true"></div>
-        <div class="measure-point point-a" aria-hidden="true"></div>
-        <div class="measure-point point-b" aria-hidden="true"></div>
-        <div class="measure-point point-c" aria-hidden="true"></div>
-
-        <div class="field-readout readout-a"><small>ESTACIÓN</small><b>TS-01</b><span>Control activo</span></div>
-        <div class="field-readout readout-b"><small>LECTURA</small><b>± 0.02 m</b><span>Referencia técnica</span></div>
-        <div class="field-readout readout-c"><small>PUNTO</small><b>P-104</b><span>N / E / Cota</span></div>
-        <div class="field-watermark" aria-hidden="true">△</div>
+      <div class="field-scene motion-zone" aria-label="Escena técnica de topografía terrestre y captura aérea">
+        <div class="field-sky" aria-hidden="true"></div><div class="field-horizon" aria-hidden="true"></div>
+        <svg class="field-lines" viewBox="0 0 760 640" aria-hidden="true"><path d="M-40 506C125 382 246 545 395 432s285-140 425-58"/><path d="M-25 548C145 430 268 582 432 478s278-116 382-56"/><path d="M15 465c116-91 242 27 356-52s229-116 367-71"/></svg>
+        <div class="flight-corridor" aria-hidden="true"><span class="flight-line f1"></span><span class="flight-line f2"></span><span class="flight-line f3"></span><span class="flight-line f4"></span></div>
+        <div class="hero-drone" aria-hidden="true"><span class="drone-arm arm-a"></span><span class="drone-arm arm-b"></span><span class="drone-arm arm-c"></span><span class="drone-arm arm-d"></span><span class="drone-rotor r-a"></span><span class="drone-rotor r-b"></span><span class="drone-rotor r-c"></span><span class="drone-rotor r-d"></span><span class="drone-body"></span><span class="drone-camera"></span><span class="drone-scan"></span></div>
+        <div class="instrument station" aria-hidden="true"><div class="station-head"><span class="lens"></span><span class="screen"></span></div><div class="station-neck"></div><span class="station-base-v10"></span><span class="station-keypad-v10"></span><div class="tripod-leg leg-a"></div><div class="tripod-leg leg-b"></div><div class="tripod-leg leg-c"></div></div>
+        <div class="instrument prism" aria-hidden="true"><div class="prism-head"><span></span></div><div class="prism-pole"></div></div>
+        <div class="measure-beam" aria-hidden="true"></div><div class="measure-point point-a" aria-hidden="true"></div><div class="measure-point point-b" aria-hidden="true"></div><div class="measure-point point-c" aria-hidden="true"></div>
+        <div class="survey-reticle" aria-hidden="true"><i></i><b></b></div><div class="metric-baseline" aria-hidden="true"><span>HD 42.381 m</span></div>
+        <div class="field-readout readout-a"><small>ESTACIÓN</small><b>TS-01</b><span>Control activo</span></div><div class="field-readout readout-b"><small>DRON</small><b>RTK READY</b><span>Misión preparada</span></div><div class="field-watermark" aria-hidden="true">△</div>
+        <section class="survey-hud" aria-label="Lectura técnica ilustrativa"><div class="hud-main"><div class="hud-head"><strong>ESTACIÓN TOTAL · MEDICIÓN</strong><span>Valores demostrativos</span></div><div class="hud-grid"><div class="hud-metric"><small>Hz</small><b>128°34′22″</b></div><div class="hud-metric"><small>V</small><b>91°12′08″</b></div><div class="hud-metric"><small>SD</small><b>42.386 m</b></div><div class="hud-metric"><small>HD</small><b>42.381 m</b></div><div class="hud-metric"><small>ΔH</small><b>+0.642 m</b></div></div></div><div class="hud-side"><div class="hud-coordinate"><small>N</small><b>998456.220</b></div><div class="hud-coordinate"><small>E</small><b>661024.890</b></div><div class="hud-coordinate"><small>Z</small><b>124.800 m</b></div><div class="hud-coordinate"><small>HI / HR</small><b>1.620 / 2.000 m</b></div><div class="hud-note">Punto P-104 · prisma 0 mm · visualización técnica ilustrativa hasta incorporar mediciones reales.</div></div></section>
       </div>
 
-      <nav class="quick-dock" aria-label="Accesos rápidos">
-        <a class="jump-link" href="#servicios">Servicios</a>
-        <a class="jump-link" href="#metodo">Cómo trabaja</a>
-        <a class="jump-link" href="#proyectos">Portafolio</a>
-        <a class="jump-link" href="#credenciales">Idoneidad</a>
-        <a class="jump-link" href="#cotizar">Contacto</a>
-      </nav>
+      <nav class="quick-dock" aria-label="Accesos rápidos"><a class="jump-link" href="#servicios">Servicios</a><a class="jump-link" href="#tecnologia">Tecnología</a><a class="jump-link" href="#metodo">Cómo trabaja</a><a class="jump-link" href="#proyectos">Portafolio</a><a class="jump-link" href="#credenciales">Idoneidad</a><a class="jump-link" href="#cotizar">Contacto</a></nav>
     </section>
 
     <section id="servicios" class="services section-anchor">
-      <div class="section-intro">
-        <p class="kicker">Servicios profesionales</p>
-        <h2>Información técnica organizada como un sistema, no como una lista de cajas.</h2>
-        <p>Cada servicio muestra qué se mide, para qué sirve y qué resultado obtiene el cliente.</p>
-      </div>
-
-      <div class="service-mosaic">
-        <article class="service-tile tile-main">
-          <div class="tile-index">01</div>
-          <div><small>BASE DEL PROYECTO</small><h3>Levantamiento topográfico</h3><p>Captura de terreno, estructuras, desniveles y referencias para diseño, planificación y documentación.</p></div>
-          <div class="tile-diagram terrain-diagram" aria-hidden="true"><i></i><i></i><i></i><span>P1</span><span>P2</span><span>P3</span></div>
-        </article>
+      <div class="section-intro"><p class="kicker">Servicios profesionales</p><h2>Cada servicio explica qué se mide, cómo se obtiene y qué recibe el cliente.</h2><p>La información está organizada como un sistema técnico continuo, no como una colección de tarjetas aisladas.</p></div>
+      <div class="service-mosaic v11-service-mosaic">
+        <article class="service-tile tile-main"><div class="tile-index">01</div><div><small>BASE DEL PROYECTO</small><h3>Levantamiento topográfico</h3><p>Captura de terreno, estructuras, desniveles y referencias para diseño, planificación y documentación.</p></div><div class="tile-diagram terrain-diagram" aria-hidden="true"><i></i><i></i><i></i><span>P1</span><span>P2</span><span>P3</span></div></article>
         <article class="service-tile"><div class="tile-index">02</div><small>LÍMITES</small><h3>Linderos y mensuras</h3><p>Comprobación de límites, medidas y referencias del terreno.</p><div class="micro-line" aria-hidden="true"></div></article>
         <article class="service-tile accent-tile"><div class="tile-index">03</div><small>OBRA</small><h3>Replanteos</h3><p>Traslado de ejes, cotas y puntos del proyecto al terreno.</p><div class="crosshair" aria-hidden="true"></div></article>
         <article class="service-tile wide-tile"><div class="tile-index">04</div><div><small>COORDENADAS</small><h3>Georreferenciación</h3><p>Control espacial para documentación y lectura territorial.</p></div><div class="coord-chip"><b>N 998456.22</b><b>E 661024.89</b><span>Cota 124.8</span></div></article>
-        <article class="service-tile"><div class="tile-index">05</div><small>ENTREGA</small><h3>Planos y documentación</h3><p>Información de campo organizada para consulta y entrega técnica.</p><div class="sheet-mark" aria-hidden="true"></div></article>
+        <article class="service-tile aerial-tile"><div class="tile-index">05</div><small>CAPTURA AÉREA</small><h3>Dron y fotogrametría</h3><p>Planificación de vuelo, cobertura del terreno y productos visuales para análisis cuando el alcance del proyecto lo requiera.</p><div class="mini-flight" aria-hidden="true"><i></i><i></i><i></i><b></b></div></article>
+        <article class="service-tile"><div class="tile-index">06</div><small>ENTREGA</small><h3>Planos y documentación</h3><p>Información de campo organizada para consulta y entrega técnica.</p><div class="sheet-mark" aria-hidden="true"></div></article>
       </div>
     </section>
 
-    <section id="metodo" class="method section-anchor">
-      <div class="section-intro compact">
-        <p class="kicker">Método de trabajo</p>
-        <h2>Un recorrido instructivo que encaja etapa por etapa.</h2>
-      </div>
-      <div class="method-mosaic">
-        <article class="method-step step-1"><span>01</span><div><small>INICIO</small><h3>Solicitud</h3><p>Ubicación, tipo de servicio y necesidad.</p></div></article>
-        <article class="method-step step-2"><span>02</span><div><small>ANÁLISIS</small><h3>Evaluación</h3><p>Alcance, documentos y referencias disponibles.</p></div></article>
-        <article class="method-step step-3"><span>03</span><div><small>CAMPO</small><h3>Medición</h3><p>Equipo, puntos de control y registro técnico.</p></div><div class="mini-station" aria-hidden="true"><i></i><b></b></div></article>
-        <article class="method-step step-4"><span>04</span><div><small>RESULTADO</small><h3>Procesamiento y entrega</h3><p>Datos, planos y documentación acordada.</p></div></article>
+    <section id="tecnologia" class="technology section-anchor motion-zone">
+      <div class="tech-intro"><p class="kicker">Tecnología de medición</p><h2>Medición terrestre y captura aérea dentro del mismo flujo técnico.</h2><p>La tecnología se presenta por su función: orientar, medir, georreferenciar, cubrir el terreno y transformar observaciones en información útil.</p></div>
+      <div class="tech-mosaic">
+        <article class="tech-panel station-tech"><div class="tech-panel-head"><span class="tech-number">01</span><div><small>MEDICIÓN TERRESTRE</small><h3>Estación total</h3></div></div><div class="station-dashboard"><div class="station-scope" aria-hidden="true"><span class="scope-ring s1"></span><span class="scope-ring s2"></span><span class="scope-line x"></span><span class="scope-line y"></span><b></b></div><div class="station-data"><span><small>Hz</small><b>128°34′22″</b></span><span><small>HD</small><b>42.381 m</b></span><span><small>ΔH</small><b>+0.642 m</b></span><span><small>Punto</small><b>P-104</b></span></div></div><div class="tech-flow" aria-label="Flujo de estación total"><span>Orientación</span><i></i><span>Puntería</span><i></i><span>EDM</span><i></i><span>Coordenada</span></div><p class="tech-note">Lecturas de ejemplo para explicar el proceso; los valores reales se incorporan únicamente con datos autorizados de campo.</p></article>
+        <article class="tech-panel drone-tech"><div class="tech-panel-head"><span class="tech-number">02</span><div><small>CAPTURA AÉREA</small><h3>Dron / fotogrametría</h3></div></div><div class="mission-tabs" role="tablist" aria-label="Fases de misión aérea"><button type="button" class="mission-tab active" data-mission="plan" aria-selected="true">Planificación</button><button type="button" class="mission-tab" data-mission="capture" aria-selected="false">Captura</button><button type="button" class="mission-tab" data-mission="result" aria-selected="false">Resultado</button></div><div class="drone-stage" data-mode="plan" aria-live="polite"><div class="parcel-grid" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><svg class="mission-map" viewBox="0 0 700 420" preserveAspectRatio="none" aria-hidden="true"><polygon class="parcel-outline" points="92,72 585,92 628,334 132,360"/><path class="route route-1" d="M140 122 H570"/><path class="route route-2" d="M565 170 H150"/><path class="route route-3" d="M158 220 H580"/><path class="route route-4" d="M584 272 H170"/><path class="route route-5" d="M180 320 H594"/><path class="contour c1" d="M40 310c130-110 200 45 330-35s205-90 340-35"/><path class="contour c2" d="M20 350c150-105 235 45 365-35s200-72 330-20"/><path class="contour c3" d="M70 270c110-92 195 32 300-34s190-82 300-42"/></svg><div class="drone-aircraft" aria-hidden="true"><i class="da arm-1"></i><i class="da arm-2"></i><i class="da arm-3"></i><i class="da arm-4"></i><i class="dr rotor-1"></i><i class="dr rotor-2"></i><i class="dr rotor-3"></i><i class="dr rotor-4"></i><b class="drone-core"></b><em class="drone-gimbal"></em></div><div class="mission-badge"><small>ESTADO</small><b data-metric="status">MISIÓN PREPARADA</b></div><div class="mission-watermark" aria-hidden="true">△</div></div><div class="mission-metrics"><span><small data-label="m1">Área</small><b data-metric="m1">2.4 ha</b></span><span><small data-label="m2">Altura</small><b data-metric="m2">80 m</b></span><span><small data-label="m3">Solape</small><b data-metric="m3">80 / 70%</b></span><span><small data-label="m4">RTK</small><b data-metric="m4">READY</b></span></div><p class="tech-note">Los indicadores de misión son demostrativos. La configuración real depende del equipo, normativa, terreno, clima y alcance contratado.</p></article>
+        <article class="tech-mini gnss-tech"><small>03 · POSICIONAMIENTO</small><h3>GNSS / RTK</h3><p>Control de coordenadas y puntos de referencia dentro del flujo de campo.</p><div class="gnss-visual" aria-hidden="true"><i></i><i></i><i></i><b></b></div></article>
+        <article class="tech-mini output-tech"><small>04 · RESULTADOS</small><h3>Procesamiento y entrega</h3><p>Planos, superficies, ortomosaicos, modelos y documentación según el alcance real del trabajo.</p><div class="output-stack" aria-hidden="true"><i></i><i></i><i></i></div></article>
       </div>
     </section>
 
-    <section id="proyectos" class="projects section-anchor">
-      <div class="section-intro light-copy">
-        <p class="kicker">Portafolio técnico</p>
-        <h2>Escenas de trabajo que explican el servicio sin saturar la pantalla.</h2>
-        <p>La información visual permanece activa, pero el desplazamiento de la página queda libre y estable.</p>
-      </div>
+    <section id="metodo" class="method section-anchor"><div class="section-intro compact"><p class="kicker">Método de trabajo</p><h2>Del alcance inicial al resultado técnico, sin pasos aislados.</h2></div><div class="method-track"><article class="method-node"><span>01</span><div><small>INICIO</small><h3>Solicitud</h3><p>Ubicación, necesidad y objetivo del cliente.</p></div></article><article class="method-node"><span>02</span><div><small>PLANIFICACIÓN</small><h3>Evaluación</h3><p>Alcance, documentos, referencias y tecnología apropiada.</p></div></article><article class="method-node terrestrial"><span>03</span><div><small>CAMPO</small><h3>Medición terrestre</h3><p>Estación total, puntos de control y registro técnico.</p></div></article><article class="method-node aerial"><span>04</span><div><small>AÉREO</small><h3>Captura con dron</h3><p>Cuando aplica: misión, cobertura, imágenes y control espacial.</p></div></article><article class="method-node"><span>05</span><div><small>RESULTADO</small><h3>Procesamiento y entrega</h3><p>Datos, planos y productos acordados.</p></div></article></div></section>
 
-      <div class="project-mosaic">
-        <article class="project-panel project-a">
-          <div class="project-scene">
-            <svg viewBox="0 0 700 420" aria-hidden="true"><path d="M-20 328c116-112 222 28 336-54s232-118 418-42"/><path d="M-20 375c132-100 246 32 366-48s226-95 376-32"/><polygon points="122,90 516,118 558,312 166,340"/></svg>
-            <div class="scan-line"></div><span class="node n1"></span><span class="node n2"></span><span class="node n3"></span>
-            <div class="project-watermark">△</div>
-            <div class="scene-label"><small>CONTROL DE CAMPO</small><b>Levantamiento</b></div>
-          </div>
-          <div class="project-copy"><span>01</span><div><small>LEVANTAMIENTO</small><h3>Proyecto residencial</h3><p>Terreno, cotas y referencias para una base técnica clara.</p></div></div>
-        </article>
+    <section id="proyectos" class="projects section-anchor"><div class="section-intro light-copy"><p class="kicker">Portafolio técnico</p><h2>Escenas que muestran cómo el dato cambia desde campo hasta el resultado.</h2><p>Los ejemplos visuales explican procesos sin presentar información ficticia como si fueran proyectos reales.</p></div><div class="project-mosaic v11-project-mosaic"><article class="project-panel project-a"><div class="project-scene"><svg viewBox="0 0 700 420" aria-hidden="true"><path d="M-20 328c116-112 222 28 336-54s232-118 418-42"/><path d="M-20 375c132-100 246 32 366-48s226-95 376-32"/><polygon points="122,90 516,118 558,312 166,340"/></svg><div class="scan-line"></div><span class="node n1"></span><span class="node n2"></span><span class="node n3"></span><div class="project-watermark">△</div><div class="scene-label"><small>CONTROL DE CAMPO</small><b>Levantamiento</b></div></div><div class="project-copy"><span>01</span><div><small>MEDICIÓN TERRESTRE</small><h3>Terreno y cotas</h3><p>Puntos, desniveles y referencias organizados como base técnica.</p></div></div></article><article class="project-panel project-b aerial-project"><div class="project-copy"><span>02</span><div><small>CAPTURA AÉREA</small><h3>Fotogrametría</h3><p>Ruta de vuelo, cobertura y transformación de imágenes en información territorial.</p></div></div><div class="project-scene"><div class="aerial-project-grid" aria-hidden="true"></div><svg class="aerial-route" viewBox="0 0 700 420" aria-hidden="true"><path d="M80 95H610M610 155H95M100 215H620M620 275H115M120 335H625"/></svg><div class="project-drone" aria-hidden="true">◆</div><div class="project-watermark">△</div><div class="scene-label"><small>MISIÓN AÉREA</small><b>Dron</b></div></div></article><article class="project-panel project-c"><div class="project-scene"><div class="geo-rings" aria-hidden="true"><i></i><i></i><i></i></div><span class="geo-dot d1"></span><span class="geo-dot d2"></span><span class="geo-dot d3"></span><div class="project-watermark">△</div><div class="scene-label"><small>CONTROL TERRITORIAL</small><b>Georreferenciación</b></div></div><div class="project-copy"><span>03</span><div><small>COORDENADAS</small><h3>Terreno y linderos</h3><p>Relación espacial, puntos de control y referencias verificables.</p></div></div></article></div></section>
 
-        <article class="project-panel project-b">
-          <div class="project-copy"><span>02</span><div><small>REPLANTEO</small><h3>Obra civil</h3><p>Ejes, puntos y control de cotas en ejecución.</p></div></div>
-          <div class="project-scene">
-            <div class="cross-grid" aria-hidden="true"></div><div class="axis-line axis-a"></div><div class="axis-line axis-b"></div><span class="target t1"></span><span class="target t2"></span>
-            <div class="project-watermark">△</div><div class="scene-label"><small>EJES Y COTAS</small><b>Replanteo</b></div>
-          </div>
-        </article>
+    <section id="credenciales" class="credentials section-anchor"><div class="credential-shell"><div><p class="kicker">Confianza profesional</p><h2>Topógrafa idónea en Panamá.</h2><p>Este espacio queda preparado para el nombre completo, número de idoneidad/licencia, experiencia y datos que ella autorice publicar.</p></div><div class="credential-seal"><span>△</span><strong>IDONEIDAD</strong><small>Datos pendientes de personalización</small></div></div></section>
 
-        <article class="project-panel project-c">
-          <div class="project-scene">
-            <div class="geo-rings" aria-hidden="true"><i></i><i></i><i></i></div><span class="geo-dot d1"></span><span class="geo-dot d2"></span><span class="geo-dot d3"></span>
-            <div class="project-watermark">△</div><div class="scene-label"><small>CONTROL TERRITORIAL</small><b>Georreferenciación</b></div>
-          </div>
-          <div class="project-copy"><span>03</span><div><small>COORDENADAS</small><h3>Terreno y linderos</h3><p>Relación espacial, puntos de control y referencias verificables.</p></div></div>
-        </article>
-      </div>
-    </section>
-
-    <section id="credenciales" class="credentials section-anchor">
-      <div class="credential-shell">
-        <div><p class="kicker">Confianza profesional</p><h2>Topógrafa idónea en Panamá.</h2><p>Este espacio queda preparado para el nombre completo, número de idoneidad/licencia, experiencia y datos que ella autorice publicar.</p></div>
-        <div class="credential-seal"><span>△</span><strong>IDONEIDAD</strong><small>Datos pendientes de personalización</small></div>
-      </div>
-    </section>
-
-    <section id="cotizar" class="quote section-anchor">
-      <div class="quote-intro"><p class="kicker">Cotización inteligente</p><h2>Cuéntanos qué necesitas.</h2><p>Preparado para n8n mediante webhook seguro. Mientras la automatización no esté activa, el formulario no envía datos.</p></div>
-      <form id="quoteForm" class="quote-form">
-        <label>Nombre completo<input name="name" required autocomplete="name" /></label>
-        <label>WhatsApp<input name="phone" required inputmode="tel" autocomplete="tel" /></label>
-        <label>Tipo de servicio<select name="service" required><option value="">Seleccionar</option><option>Levantamiento topográfico</option><option>Linderos / mensura</option><option>Replanteo</option><option>Georreferenciación</option><option>Planos / documentación</option><option>Otro</option></select></label>
-        <label>Ubicación aproximada<input name="location" placeholder="Provincia / corregimiento / sector" required /></label>
-        <label>Área aproximada<input name="area" placeholder="Ej. 800 m², 2 ha, no sé" /></label>
-        <label class="full">Descripción<textarea name="message" rows="5" required placeholder="Describe brevemente el trabajo que necesitas..."></textarea></label>
-        <label class="consent full"><input type="checkbox" required /> <span>Autorizo el uso de estos datos únicamente para responder esta solicitud.</span></label>
-        <div class="form-actions full"><button class="button primary" type="submit">Enviar solicitud</button><span id="formStatus" aria-live="polite"></span></div>
-      </form>
-    </section>
+    <section id="cotizar" class="quote section-anchor"><div class="quote-intro"><p class="kicker">Cotización inteligente</p><h2>Cuéntanos qué necesitas.</h2><p>Preparado para n8n mediante webhook seguro. Mientras la automatización no esté activa, el formulario no envía datos.</p></div><form id="quoteForm" class="quote-form"><label>Nombre completo<input name="name" required autocomplete="name" /></label><label>WhatsApp<input name="phone" required inputmode="tel" autocomplete="tel" /></label><label>Tipo de servicio<select name="service" required><option value="">Seleccionar</option><option>Levantamiento topográfico</option><option>Linderos / mensura</option><option>Replanteo</option><option>Georreferenciación</option><option>Dron / fotogrametría</option><option>Planos / documentación</option><option>Otro</option></select></label><label>Ubicación aproximada<input name="location" placeholder="Provincia / corregimiento / sector" required /></label><label>Área aproximada<input name="area" placeholder="Ej. 800 m², 2 ha, no sé" /></label><label class="full">Descripción<textarea name="message" rows="5" required placeholder="Describe brevemente el trabajo que necesitas..."></textarea></label><label class="consent full"><input type="checkbox" required /> <span>Autorizo el uso de estos datos únicamente para responder esta solicitud.</span></label><div class="form-actions full"><button class="button primary" type="submit">Enviar solicitud</button><span id="formStatus" aria-live="polite"></span></div></form></section>
   </main>
 
-  <footer class="footer">
-    <div><strong>Topografía Profesional</strong><p>Panamá · Sitio en fase de personalización</p></div>
-    <nav><a class="jump-link" href="#inicio">Inicio</a><a class="jump-link" href="#cotizar">Contacto</a></nav>
-  </footer>
+  <footer class="footer"><div><strong>Topografía Profesional</strong><p>Panamá · Sitio en fase de personalización</p></div><nav><a class="jump-link" href="#inicio">Inicio</a><a class="jump-link" href="#tecnologia">Tecnología</a><a class="jump-link" href="#cotizar">Contacto</a></nav></footer>
 
-  <a class="whatsapp-float" href="https://wa.me/50769759603?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20informaci%C3%B3n%20sobre%20un%20servicio%20de%20topograf%C3%ADa." target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp al 6975-9603">
-    <span aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16.04 3C9.4 3 4 8.3 4 14.82c0 2.28.66 4.5 1.92 6.4L4 28l7-1.83a12.2 12.2 0 0 0 5.02 1.08h.01C22.67 27.25 28 21.96 28 15.4 28 8.83 22.68 3 16.04 3Zm6.98 17.04c-.3.84-1.74 1.58-2.4 1.68-.62.1-1.4.14-2.26-.13-.52-.17-1.2-.39-2.07-.76-3.65-1.58-6.03-5.27-6.21-5.51-.18-.25-1.49-1.98-1.49-3.78 0-1.8.94-2.69 1.28-3.06.33-.37.73-.46.97-.46h.7c.23 0 .53-.09.83.63.3.73 1.03 2.52 1.12 2.7.1.2.16.42.03.67-.12.25-.18.4-.36.61-.19.22-.39.48-.56.64-.19.19-.38.4-.16.78.21.37.95 1.56 2.04 2.53 1.4 1.25 2.58 1.64 2.95 1.83.37.18.58.15.8-.1.21-.25.91-1.06 1.15-1.43.25-.37.49-.3.83-.18.34.12 2.16 1.02 2.53 1.2.37.19.61.28.7.43.1.16.1.9-.2 1.72Z"/></svg></span>
-  </a>
+  <a class="whatsapp-float" href="https://wa.me/50769759603?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20informaci%C3%B3n%20sobre%20un%20servicio%20de%20topograf%C3%ADa." target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp al 6975-9603"><span aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16.04 3C9.4 3 4 8.3 4 14.82c0 2.28.66 4.5 1.92 6.4L4 28l7-1.83a12.2 12.2 0 0 0 5.02 1.08h.01C22.67 27.25 28 21.96 28 15.4 28 8.83 22.68 3 16.04 3Zm6.98 17.04c-.3.84-1.74 1.58-2.4 1.68-.62.1-1.4.14-2.26-.13-.52-.17-1.2-.39-2.07-.76-3.65-1.58-6.03-5.27-6.21-5.51-.18-.25-1.49-1.98-1.49-3.78 0-1.8.94-2.69 1.28-3.06.33-.37.73-.46.97-.46h.7c.23 0 .53-.09.83.63.3.73 1.03 2.52 1.12 2.7.1.2.16.42.03.67-.12.25-.18.4-.36.61-.19.22-.39.48-.56.64-.19.19-.38.4-.16.78.21.37.95 1.56 2.04 2.53 1.4 1.25 2.58 1.64 2.95 1.83.37.18.58.15.8-.1.21-.25.91-1.06 1.15-1.43.25-.37.49-.3.83-.18.34.12 2.16 1.02 2.53 1.2.37.19.61.28.7.43.1.16.1.9-.2 1.72Z"/></svg></span><strong>WhatsApp</strong></a>
 
-  <script src="config.js?v=9"></script>
-  <script src="app-v9.js?v=9" defer></script>
+  <script src="config.js?v=11"></script>
+  <script src="app-v11.js?v=11" defer></script>
 </body>
 </html>
