@@ -7,16 +7,15 @@
   <title>Topografía Profesional | Panamá</title>
   <meta name="description" content="Servicios profesionales de topografía en Panamá con experiencia de navegación fluida, visualización técnica y contacto directo por WhatsApp." />
   <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="stylesheet" href="styles.css?v=5" />
+  <link rel="stylesheet" href="styles.css?v=6" />
   <style>
     .whatsapp-float{position:fixed;right:18px;bottom:22px;z-index:9999;display:flex;align-items:center;gap:11px;min-height:58px;padding:8px 15px 8px 8px;border-radius:18px;background:#101714;color:#fff!important;border:1px solid rgba(255,255,255,.16);box-shadow:0 18px 48px rgba(16,23,20,.34);text-decoration:none;isolation:isolate}
     .whatsapp-float:hover,.whatsapp-float:focus-visible{transform:translateY(-2px);box-shadow:0 22px 58px rgba(16,23,20,.4);outline:2px solid rgba(37,211,102,.38);outline-offset:3px}
     .whatsapp-icon{display:grid;place-items:center;flex:0 0 43px;width:43px;height:43px;border-radius:14px;background:#25D366;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18)}
-    .whatsapp-icon img{display:block;width:25px;height:25px}
     .whatsapp-copy{display:flex;flex-direction:column;line-height:1.08;white-space:nowrap}
     .whatsapp-copy strong{font-size:.86rem;letter-spacing:.015em}
     .whatsapp-copy small{margin-top:4px;color:#d6e1db;font-size:.73rem;letter-spacing:.035em}
-    @media(max-width:620px){.whatsapp-float{right:14px;bottom:18px;width:60px;height:60px;min-height:60px;padding:8px;border-radius:19px}.whatsapp-icon{width:44px;height:44px;border-radius:14px}.whatsapp-icon img{width:26px;height:26px}.whatsapp-copy{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}}
+    @media(max-width:620px){.whatsapp-float{right:14px;bottom:18px;width:60px;height:60px;min-height:60px;padding:8px;border-radius:19px}.whatsapp-icon{width:44px;height:44px;border-radius:14px}.whatsapp-copy{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}}
   </style>
 </head>
 <body>
@@ -25,7 +24,9 @@
       <span class="brand-mark">△</span>
       <span><strong>TOPÓGRAFA</strong><small>Profesional idónea · Panamá</small></span>
     </a>
-    <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menú</button>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav" aria-label="Abrir navegación">
+      <span>Menú</span><i class="menu-glyph" aria-hidden="true"><b></b><b></b></i>
+    </button>
     <nav id="nav" class="nav">
       <a href="#servicios">Servicios</a>
       <a href="#inteligencia">Visualización</a>
@@ -35,10 +36,24 @@
       <a class="nav-cta" href="#cotizar">Cotizar</a>
     </nav>
   </header>
+  <div class="nav-backdrop" aria-hidden="true"></div>
 
   <main>
     <section id="inicio" class="hero section hero-depth">
       <div class="survey-grid" aria-hidden="true"></div>
+      <div class="terrain-field" aria-hidden="true">
+        <svg class="terrain-sheet terrain-sheet-a" data-page-depth="0.035" viewBox="0 0 1200 760" preserveAspectRatio="none">
+          <path d="M-80 620 C160 410 300 710 560 470 S920 210 1280 410"/>
+          <path d="M-40 675 C170 490 350 740 620 525 S980 285 1280 470"/>
+          <path d="M-20 555 C180 355 365 640 585 420 S930 170 1250 350"/>
+        </svg>
+        <svg class="terrain-sheet terrain-sheet-b" data-page-depth="0.075" viewBox="0 0 1200 760" preserveAspectRatio="none">
+          <path d="M70 650 C240 505 360 690 520 575 S750 370 910 455 S1110 560 1240 400"/>
+          <path d="M120 585 C270 445 390 615 540 510 S755 320 910 390 S1090 500 1210 355"/>
+        </svg>
+        <div class="terrain-beacon beacon-a" data-page-depth="0.11"></div>
+        <div class="terrain-beacon beacon-b" data-page-depth="0.16"></div>
+      </div>
       <div class="hero-copy reveal">
         <p class="eyebrow">Precisión · Territorio · Confianza</p>
         <h1>Topografía profesional con profundidad visual, criterio técnico y precisión en campo.</h1>
@@ -255,11 +270,11 @@
   </footer>
 
   <a class="whatsapp-float" href="https://wa.me/50769759603?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20informaci%C3%B3n%20sobre%20un%20servicio%20de%20topograf%C3%ADa." target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp al 6975-9603">
-    <span class="whatsapp-icon" aria-hidden="true"><img src="https://cdn.simpleicons.org/whatsapp/ffffff" alt="" width="26" height="26" /></span>
+    <span class="whatsapp-icon" aria-hidden="true"><svg viewBox="0 0 32 32" width="26" height="26"><path fill="#fff" d="M16.04 3C9.4 3 4 8.3 4 14.82c0 2.28.66 4.5 1.92 6.4L4 28l7-1.83a12.2 12.2 0 0 0 5.02 1.08h.01C22.67 27.25 28 21.96 28 15.4 28 8.83 22.68 3 16.04 3Zm6.98 17.04c-.3.84-1.74 1.58-2.4 1.68-.62.1-1.4.14-2.26-.13-.52-.17-1.2-.39-2.07-.76-3.65-1.58-6.03-5.27-6.21-5.51-.18-.25-1.49-1.98-1.49-3.78 0-1.8.94-2.69 1.28-3.06.33-.37.73-.46.97-.46h.7c.23 0 .53-.09.83.63.3.73 1.03 2.52 1.12 2.7.1.2.16.42.03.67-.12.25-.18.4-.36.61-.19.22-.39.48-.56.64-.19.19-.38.4-.16.78.21.37.95 1.56 2.04 2.53 1.4 1.25 2.58 1.64 2.95 1.83.37.18.58.15.8-.1.21-.25.91-1.06 1.15-1.43.25-.37.49-.3.83-.18.34.12 2.16 1.02 2.53 1.2.37.19.61.28.7.43.1.16.1.9-.2 1.72Z"/></svg></span>
     <span class="whatsapp-copy"><strong>WhatsApp</strong><small>6975-9603</small></span>
   </a>
 
-  <script src="config.js?v=5"></script>
-  <script src="app.js?v=5" defer></script>
+  <script src="config.js?v=6"></script>
+  <script src="app.js?v=6" defer></script>
 </body>
 </html>
