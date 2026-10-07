@@ -1,5 +1,5 @@
-const CACHE='topografia-v3';
-const ASSETS=['./','./index.html','./styles.css','./app.js','./config.js','./manifest.webmanifest'];
+const CACHE='topografia-v5';
+const ASSETS=['./','./index.html','./styles.css?v=5','./app.js?v=5','./config.js?v=5','./manifest.webmanifest'];
 
 self.addEventListener('install', event => {
   self.skipWaiting();
@@ -24,6 +24,6 @@ self.addEventListener('fetch', event => {
         caches.open(CACHE).then(cache => cache.put(event.request, copy)).catch(() => {});
         return response;
       })
-      .catch(() => caches.match(event.request))
+      .catch(() => caches.match(event.request).then(match => match || caches.match('./index.html')))
   );
 });
