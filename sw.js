@@ -1,5 +1,5 @@
-const CACHE='topografia-v11';
-const ASSETS=['./','./index.html','./styles-v9.css?v=11','./enhancements-v10.css?v=11','./enhancements-v11.css?v=11','./app-v11.js?v=11','./config.js?v=11','./manifest.webmanifest'];
+const CACHE='topografia-v12';
+const ASSETS=['./','./index.html','./styles-v9.css?v=11','./enhancements-v10.css?v=11','./enhancements-v11.css?v=11','./enhancements-v12.css?v=12','./app-v11.js?v=11','./app-v12.js?v=12','./config.js?v=11','./manifest.webmanifest'];
 
 self.addEventListener('install',event=>{
   self.skipWaiting();
