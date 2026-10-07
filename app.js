@@ -19,6 +19,19 @@ function mountWhatsAppButton() {
   const number = String(cfg.whatsappNumber || '').replace(/\D/g, '');
   if (!number) return;
 
+  const style = document.createElement('style');
+  style.textContent = `
+    .whatsapp-float{position:fixed;right:18px;bottom:24px;z-index:80;display:flex;align-items:center;gap:10px;min-height:56px;padding:8px 14px 8px 8px;border-radius:18px;background:#101714;color:#fff;border:1px solid rgba(255,255,255,.14);box-shadow:0 16px 44px rgba(16,23,20,.26);transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
+    .whatsapp-float:hover,.whatsapp-float:focus-visible{transform:translateY(-3px);box-shadow:0 20px 50px rgba(16,23,20,.32);background:#17211c;outline:none}
+    .whatsapp-icon{display:grid;place-items:center;flex:0 0 42px;width:42px;height:42px;border-radius:13px;background:#25D366}
+    .whatsapp-icon svg{width:25px;height:25px;fill:#fff}
+    .whatsapp-copy{display:flex;flex-direction:column;line-height:1.12;white-space:nowrap}
+    .whatsapp-copy strong{font-size:.84rem;letter-spacing:.02em}
+    .whatsapp-copy small{margin-top:3px;color:#c7d2cc;font-size:.74rem;letter-spacing:.04em}
+    @media(max-width:620px){.whatsapp-float{right:14px;bottom:16px;width:56px;height:56px;min-height:56px;padding:7px;border-radius:18px}.whatsapp-icon{width:42px;height:42px}.whatsapp-copy{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}}
+  `;
+  document.head.appendChild(style);
+
   const message = 'Hola, vi su página web y quisiera información sobre un servicio de topografía.';
   const link = document.createElement('a');
   link.className = 'whatsapp-float';
