@@ -1,4 +1,14 @@
 const cfg = window.SITE_CONFIG || {};
+
+(function loadEnhancementStyles(){
+  if (document.querySelector('link[data-enhancements="v7"]')) return;
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = './enhancements.css?v=7';
+  link.dataset.enhancements = 'v7';
+  document.head.appendChild(link);
+})();
+
 const nav = document.querySelector('.nav');
 const menu = document.querySelector('.menu-btn');
 const backdrop = document.querySelector('.nav-backdrop');
@@ -67,6 +77,32 @@ tabs.forEach(tab => tab.addEventListener('click', () => {
   panels[key]?.classList.add('active');
 }));
 
+const projectLabels = [
+  ['LEVANTAMIENTO','CONTROL DE CAMPO'],
+  ['REPLANTEO','EJES Y COTAS'],
+  ['GEOREFERENCIA','CONTROL TERRITORIAL']
+];
+
+const projectArts = [...document.querySelectorAll('.project-art')];
+projectArts.forEach((art, index) => {
+  if (art.querySelector('.project-scene')) return;
+  const label = projectLabels[index] || ['TOPOGRAFÍA','CONTROL TÉCNICO'];
+  const scene = document.createElement('div');
+  scene.className = 'project-scene';
+  scene.innerHTML = `
+    <div class="project-sweep" aria-hidden="true"></div>
+    <span class="project-vector v1" aria-hidden="true"></span>
+    <span class="project-vector v2" aria-hidden="true"></span>
+    <span class="project-vector v3" aria-hidden="true"></span>
+    <span class="project-marker m1" aria-hidden="true"></span>
+    <span class="project-marker m2" aria-hidden="true"></span>
+    <span class="project-marker m3" aria-hidden="true"></span>
+    <div class="project-coords c1" aria-hidden="true"><span>${label[0]}</span><b>ESCENA TÉCNICA</b></div>
+    <div class="project-coords c2" aria-hidden="true"><span>${label[1]}</span><b>VISUALIZACIÓN</b></div>
+    <div class="project-altitude" aria-hidden="true">DATOS<br>CAMPO</div>`;
+  art.appendChild(scene);
+});
+
 if (!prefersReducedMotion) {
   const shell = document.querySelector('.parallax-shell');
   const innerLayers = shell ? [...shell.querySelectorAll('.layer[data-depth]')] : [];
@@ -89,6 +125,19 @@ if (!prefersReducedMotion) {
       const depth = Number(layer.dataset.pageDepth || 0);
       layer.style.transform = `translate3d(0, ${y * depth}px, 0)`;
     });
+
+    const viewport = Math.max(window.innerHeight, 1);
+    projectArts.forEach((art, index) => {
+      const rect = art.getBoundingClientRect();
+      const raw = (viewport * 0.62 - (rect.top + rect.height / 2)) / (viewport + rect.height);
+      const progress = Math.max(-0.55, Math.min(0.55, raw));
+      const scene = art.querySelector('.project-scene');
+      if (scene) scene.style.setProperty('--scene-shift', `${progress * (26 + index * 4)}px`);
+      art.style.setProperty('--terrain-shift', `${progress * -20}px`);
+      art.style.setProperty('--grid-x', `${progress * 12}px`);
+      art.style.setProperty('--grid-y', `${progress * -14}px`);
+    });
+
     ticking = false;
   }
 
@@ -138,5 +187,5 @@ form?.addEventListener('submit', async (event) => {
 });
 
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js?v=6').catch(() => {}));
+  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js?v=7').catch(() => {}));
 }
